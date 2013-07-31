@@ -35,6 +35,9 @@ nmap <Leader>j <Esc><C-]>
 " Format whole file with ,f
 nmap <Leader>f <Esc>:call FormatFile()<CR>
 
+" Compile rst file and open generated pdf
+nmap <Leader>rt <Esc>:w<CR>:call CompileRst()<CR>
+
 " Run XML file through linter with ,xl
 nmap <Leader>xl :call RunXmlLint()<CR>
 
