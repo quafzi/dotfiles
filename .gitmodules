@@ -61,3 +61,6 @@
 [submodule "bundle/bufexplorer"]
 	path = bundle/bufexplorer
 	url = https://github.com/corntrace/bufexplorer.git
+[submodule "bundle/pdv"]
+	path = bundle/pdv
+	url = https://github.com/quafzi/PDV--phpDocumentor-for-Vim.git

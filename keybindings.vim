@@ -44,6 +44,9 @@ nmap <Leader>pl <Esc>:w<CR>:!php -l %<CR>
 " Run XML file through linter with ,xl
 nmap <Leader>xl :call RunXmlLint()<CR>
 
+" Create PHPDoc blocks with ,d
+noremap <leader>d <Esc>:call PhpDoc()<CR>
+
 " Re-open file with windows line endings
 nmap <Leader>dos :e ++ff=dos<CR>
 
