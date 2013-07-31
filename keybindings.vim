@@ -38,6 +38,9 @@ nmap <Leader>f <Esc>:call FormatFile()<CR>
 " Compile rst file and open generated pdf
 nmap <Leader>rt <Esc>:w<CR>:call CompileRst()<CR>
 
+" Run PHP file through linter with ,pl
+nmap <Leader>pl <Esc>:w<CR>:!php -l %<CR>
+
 " Run XML file through linter with ,xl
 nmap <Leader>xl :call RunXmlLint()<CR>
 
