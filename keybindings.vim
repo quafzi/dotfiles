@@ -41,6 +41,9 @@ nmap <Leader>xl :call RunXmlLint()<CR>
 " Re-open file with windows line endings
 nmap <Leader>dos :e ++ff=dos<CR>
 
+" Run exuberant-ctags with ,c (in the current folder)
+nmap <Leader>c <Esc>:w<CR>:call BuildTags()<CR>
+
 " Insert Rst Headline marks under the current line
 map <Leader>h1 yypVr=o
 map <Leader>h2 yypVr-o

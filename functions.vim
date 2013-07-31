@@ -14,6 +14,13 @@ function! s:ExecuteInShell(command)
 endfunction
 command! -complete=shellcmd -nargs=+ Shell call s:ExecuteInShell(<q-args>)
 
+
+" Builds tags file
+function! BuildTags()
+    let cmd = '!ctags -R --languages=php --totals=yes --tag-relative=yes --PHP-kinds=+cf-v .'
+    execute cmd
+endfunction
+
 " Format whole file according to the filetype and vims syntax settings
 function! FormatFile()
     execute "normal! mf"
