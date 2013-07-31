@@ -138,7 +138,7 @@ if has("gui_running")
     if has('mac') || has('macunix')
         set guifont=Menlo\ Regular:h12
     else
-        set guifont=Monospace\ 12
+        set guifont=Monospace\ 10
     endif
 
     " Disable menu bar
