@@ -64,3 +64,6 @@
 [submodule "bundle/pdv"]
 	path = bundle/pdv
 	url = https://github.com/quafzi/PDV--phpDocumentor-for-Vim.git
+[submodule "bundle/searchfold"]
+	path = bundle/searchfold
+	url = https://github.com/vim-scripts/searchfold.vim.git
