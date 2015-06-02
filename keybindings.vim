@@ -1,12 +1,16 @@
 " sudo save
 cmap w!! w !sudo tee % >/dev/null
 
+" Move by screen line instead of file line
+nmap j gj
+nmap k gk
+
 " Exit insert mode with jj
 map! jj <Esc>
 
 " Save with CTRL-S both in insert and command mode
 map <C-s> :w<CR>
-imap <C-s> <Esc>:w<CR>a
+imap <C-s> <Esc>:w<CR>
 
 " Close buffer with CTRL-C
 map <C-c> :bd<CR>
@@ -20,8 +24,13 @@ map <Leader>n :NERDTreeToggle<CR>
 " Toggle code comment with NERDCommenter
 vmap <Leader>c :call NERDComment("nx", "Toggle")<CR>
 
+" Run tests for current file
+nmap <Leader>t :call RunCurrentTest()<CR>
+" Since tests are soo awesome, use leader+leader to run tests as well
+nmap <Leader>, :call RunCurrentTest()<CR>
+
 " Switch to the alternate buffer with ,SPACE
-nnoremap <leader><space> :<Esc>:b#<CR>
+nnoremap <Leader><space> :<Esc>:b#<CR>
 
 " Open vimrc file with ,v
 nmap <leader>v :tabedit $MYVIMRC<CR>
@@ -29,8 +38,14 @@ nmap <leader>v :tabedit $MYVIMRC<CR>
 " Search tag with ,s
 nmap <Leader>s <Esc>:tag<space>
 
+" Open current file via `open` command (Mac only)
+nmap <Leader>o :!open %<CR>
+
 " Jump to tag with ,j
 nmap <Leader>j <Esc><C-]>
+
+" Jump to tag in split window with ,js
+nmap <Leader>js <Esc>:vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 " Format whole file with ,f
 nmap <Leader>f <Esc>:call FormatFile()<CR>
@@ -62,8 +77,14 @@ map <Leader>h3 yypVr~o
 nnoremap <tab> %
 vnoremap <tab> %
 
+" Enable distraction free writing mode (no toggle atm) with CONTROL-F10
+map <C-F10> :call DistractionFreeWriting()<CR>
+
 " Switch between light and dark background with Control-F11
 map <C-F11> :call SwitchBackground()<CR>
+
+" Use space to center screen on current line
+nmap <Space> zz
 
 " Shortcuts for tabular plugin
 vmap <Leader>a= :Tabularize /=<CR>
@@ -87,3 +108,16 @@ map <D-2> 2gt
 map <D-3> 3gt
 map <D-4> 4gt
 map <D-5> 5gt
+
+" Use CTRL + direction to move from one split to another
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Map backtick to single quote and vice versa
+" That way single quote act's like backtick for marks,
+" hence it jumps to the exact position, not just the beginning
+" of the line. To get single quote behaviour, backtick can be used
+nnoremap ' `
+nnoremap ` '

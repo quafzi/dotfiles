@@ -1,3 +1,31 @@
+" Switch into distraction free writing (iA Writer like)
+" Requires 'Cousine' font, see: http://www.fontsquirrel.com/fonts/cousine
+function! DistractionFreeWriting()
+  set laststatus=0
+  set noruler
+  set linebreak
+  set norelativenumber
+  set nonumber
+
+  if has("gui_running")
+    colorscheme iawriter
+    set background=light
+    set lines=40 columns=100
+    set linespace=5
+    set guioptions-=r
+
+    if has("gui_macvim")
+      set fuoptions=background:#00f5f6f6
+      set fullscreen
+      set guifont=Cousine:h14
+    elseif has("macunix")
+      set guifont=Cousine:h14
+    else
+      set guifont=Cousine\ h14
+    endif
+  endif
+endfunction
+
 " Acts as :!command but shows the output in a seperate buffer
 function! s:ExecuteInShell(command)
     let command = join(map(split(a:command), 'expand(v:val)'))
@@ -27,6 +55,51 @@ function! FormatFile()
     execute "normal! gg"
     execute "normal! =G"
     execute "normal! 'f"
+endfunction
+
+" Returns true if current file is a spec file
+function! InSpecFile()
+  return match(expand("%"), "_spec.rb$") != -1 || match(expand("%"), ".feature$") != -1
+endfunction
+
+" Returns true if current file is a ruby test file
+function! InRubyTestFile()
+  return match(expand("%"), "_test.rb$") != -1
+endfunction
+
+" Returns true if current file is a javascript file
+function! InJSFile()
+  return match(expand("%"), ".js$") != -1
+endfunction
+
+" Run current file via rspec or if possible via zeus
+function! RunCurrentTest()
+  write
+  if InSpecFile()
+    let l:command = '!{runner} %'
+
+    " If .zeus.sock is present (in current working directory)
+    if !empty(glob('.zeus.sock'))
+      let l:runner = 'zeus test'
+    else
+      let l:runner = 'rspec'
+    endif
+
+
+    " If running in tmux
+    if '$TMUX' != expand('$TMUX')
+      let command = substitute('call Send_to_Tmux("{runner} {spec}\n")', '{runner}', l:runner, 'g')
+      let command = substitute(l:command, '{spec}', expand('%'), 'g')
+    else
+      let command = substitute(l:command, '{runner}', l:runner, 'g')
+    endif
+
+    execute command
+  elseif InRubyTestFile()
+    execute '!ruby -Ilib -Itest %'
+  elseif InJSFile()
+    execute '!make test'
+  endif
 endfunction
 
 " Run XML linter for syntax checking
@@ -80,6 +153,8 @@ function! CheckForUpgrade()
 
     let output = "Vim configuration update checker\n--------------------------------\n\n"
 
+    let cwd = getcwd()
+
     execute 'lcd '.$HOME.'/.vim'
 
     let remote = system("git ls-remote origin -h refs/heads/master | awk '{print $1}'")
@@ -97,7 +172,7 @@ function! CheckForUpgrade()
         let output .= "\n==========================================" 
     endif
 
-    execute 'lcd '.$HOME.'/.vim'
+    execute 'lcd '.cwd
 
     execute ':tabnew'
 
@@ -113,4 +188,19 @@ endfunction
 " Switch between light and dark background
 function! SwitchBackground()
     let &background = (&background == "dark"? "light" : "dark")
+endfunction
+
+" Returns branch in square brackets or empty string based on fugitive#head output
+function! GitBranch()
+  if !exists('*fugitive#head')
+    return ''
+  endif
+
+  let branch = fugitive#head(7)
+
+  if branch == ''
+    return ''
+  endif
+
+  return '[' . branch . ']'
 endfunction

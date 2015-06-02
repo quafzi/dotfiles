@@ -20,8 +20,8 @@ let mapleader = ","
 " 100 Marks, 1000 Registers, 100 Commands, 100 Searches, Buffer list
 set viminfo='100,f1,\"1000,:100,/100,%
 
-" Show line numbers
-set number
+" Show line numbers (relative ones)
+set relativenumber
 
 " Enable spell checking
 " set spell
@@ -39,7 +39,8 @@ set spelllang=de,en
 " Mark line breaks with three dots
 set showbreak=...
 
-" Open files on the right side of the current file when using :vs
+" Natural splitting
+set splitbelow
 set splitright
 
 " Improve omni complete menu behaviour
@@ -52,7 +53,7 @@ set cpoptions+=$
 set laststatus=2
 
 " My preferred status line layout
-set stl=%t\ %m\ %r\ \ %y\ \ %{fugitive#statusline()}\ \ Zeile:\ %l/%L[%p%%]\ \ Spalte:\ %c\ \ Buffer:\ #%n\ 
+set stl=%t\ %m\ %r\ \ %y\ \ %{GitBranch()}\ \ %l/%L[%p%%]\ \ Col:\ %c\ \ Buf:\ #%n\ 
 
 " Set scroll off to 8 lines
 set scrolloff=8
@@ -85,9 +86,6 @@ set ts=2 sts=2 sw=2 expandtab
 
 " Make the backspace key act like it does in any editor (remove characters, indentation and end of lines)
 set backspace=indent,eol,start
-
-" Textwidth to 120 characters (based on this setting, the color column will appear)
-set textwidth=120
 
 " Always substitute global
 set gdefault
@@ -122,23 +120,28 @@ let g:netrw_liststyle=3
 " Set color scheme
 colors solarized
 
-" Set line spacing
-set linespace=0
-
-" Black background theme
-set background=dark
-
-" If GVIM was opened
+" If using GVIM/MacVim
 if has("gui_running")
+    " Use interactive shell when running commands through :!
+    " This let's the shell load it's configuration, hence
+    " aliases and config parameters are available and set, respectively
+    set shellcmdflag=-ic
 
-    " Font and fontsize
-    " Hint: Use 'set guifont=*' to bring up systems font chooser
-    "
-    " If mac, go for Menlo, otherwise use Monospace
-    if has('mac') || has('macunix')
-        set guifont=Menlo\ Regular:h12
+    " Set line spacing
+    set linespace=3
+
+    " Background color
+    set background=light
+
+    " If mac
+    if has("macunix")
+      " Use the whole screen
+      set lines=99999
+      set columns=99999
+
+      set guifont=Ubuntu\ Mono:h14,Menlo\ Regular:h12,Monospace:h12
     else
-        set guifont=Monospace\ 10
+      set guifont=Monospace\ 10
     endif
 
     " Disable menu bar
@@ -154,6 +157,10 @@ if has("gui_running")
     " Disable right scroll bar (normal and vsplit one)
     set guioptions-=r
     set guioptions-=R
+
+    " Copy handling
+    set guioptions+=a
+    set guioptions+=A
 endif
 
 " Special solarized setting to get awesome diffs
@@ -176,12 +183,21 @@ set listchars=tab:▸\ ,trail:\·
 set list
 
 " Detect .phtml and .tpl files as PHP
-autocmd BufNewFile,BufRead *.phtml set ft=php
-autocmd BufNewFile,BufRead *.tpl set ft=php
+autocmd BufNewFile,BufRead *.phtml setlocal ft=php
 
 " 4 space indenting for some specific file types
-autocmd BufNewFile,BufRead *.php set ts=4 sts=4 sw=4 expandtab
-autocmd BufNewFile,BufRead *.phtml set ts=4 sts=4 sw=4 expandtab
+autocmd BufNewFile,BufRead *.php setlocal ts=4 sts=4 sw=4 expandtab
+autocmd BufNewFile,BufRead *.phtml setlocal ts=4 sts=4 sw=4 expandtab
+
+" Enabled spell checking and set textwidth to 80 characters for markdown and text files
+autocmd BufNewFile,BufRead *.md,*.markdown,*.txt setlocal spell textwidth=80
+
+" Textwidth to 72 characters and spell check for git commit messages
+autocmd Filetype gitcommit setlocal spell textwidth=72
+
+" Use go syntax for .go files
+au BufRead,BufNewFile *.go setlocal filetype=go nolist ts=4 sts=4 sw=4 noexpandtab
+
 
 
 "------------------------------------------------------------------------------
@@ -200,8 +216,14 @@ let NERDTreeShowBookmarks=1
 " Display arrows instead of ascii art in NERDTree
 let NERDTreeDirArrows=1
 
+" Change current working directory based on root directory in NERDTree
+let NERDTreeChDirMode=2
+
 " Start NERDTree in minimal UI mode (No help lines)
 let NERDTreeMinimalUI=1
+
+" Hide .pyc files in NERDTree
+let NERDTreeIgnore = ['\.pyc$']
 
 " Open CtrlP window in mixed mode by default
 let g:ctrlp_cmd = 'CtrlPMixed'
@@ -209,5 +231,18 @@ let g:ctrlp_cmd = 'CtrlPMixed'
 " Search in folder the contains .git and go upwards from current file to find it
 let g:ctrlp_working_path_mode = 'r'
 
-" Disable space binding for auto-pairs plugin
-let g:AutoPairsMapSpace = 0
+" Use silver searcher as CtrlP backend if installed
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
+" Set coffeescript compiler path
+let coffee_compiler = '/usr/local/share/npm/bin/coffee'
+
+" Use tab for snippets
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" Use C-E and then comma to run emmet
+let g:user_emmet_leader_key='<C-E>'

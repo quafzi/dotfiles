@@ -7,6 +7,9 @@
 
 Some of the installed plugins require ruby to be installed and available in your $PATH.
 
+If you want to use the distraction free writing mode (Control-F10), you also need the
+[Cousine](http://www.fontsquirrel.com/fonts/cousine) font.
+
 
 ## Installation
 
@@ -15,7 +18,7 @@ Some of the installed plugins require ruby to be installed and available in your
 Use the following code to grep the repo and symlink it.
 
 ```bash
-$ git clone --recursive git://github.com/quafzi/vim.git ~/.vim && ln -fs ~/.vim/vimrc ~/.vimrc
+$ git clone --recursive https://github.com/quafzi/vim.git ~/.vim && ln -fs ~/.vim/vimrc ~/.vimrc
 ```
 
 ### Long version
@@ -26,7 +29,7 @@ $ git clone --recursive git://github.com/quafzi/vim.git ~/.vim && ln -fs ~/.vim/
 $ cd ~
 $ mv .vim .vim_backup
 $ mv .vimrc .vimrc_backup
-$ git clone git://github.com/quafzi/vim.git .vim
+$ git clone https://github.com/quafzi/vim.git .vim
 ```
 
 * Initialize git submodules.
@@ -43,3 +46,13 @@ $ ln -fs ~/.vim/vimrc ~/.vimrc
 ```
 
 * Restart (G)Vim.
+
+## Screenshots
+
+### Normal mode
+
+![](https://i.cloudup.com/iBVvKEJFy6.png)
+
+### Distraction free mode
+
+![](https://i.cloudup.com/MJmyXKlF1E.png)
