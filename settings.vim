@@ -120,6 +120,7 @@ let g:netrw_liststyle=3
 
 " Set color scheme
 colors solarized
+set background=dark
 
 " If using GVIM/MacVim
 if has("gui_running")
@@ -132,7 +133,7 @@ if has("gui_running")
     set linespace=3
 
     " Background color
-    set background=light
+    set background=dark
 
     " If mac
     if has("macunix")
