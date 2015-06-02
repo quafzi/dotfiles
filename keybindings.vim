@@ -56,6 +56,9 @@ nmap <Leader>rt <Esc>:w<CR>:call CompileRst()<CR>
 " Run PHP file through linter with ,pl
 nmap <Leader>pl <Esc>:w<CR>:!php -l %<CR>
 
+" Run JS file through linter with ,jl
+nmap <Leader>jl <Esc>:w<CR>:!jslint %<CR>
+
 " Run XML file through linter with ,xl
 nmap <Leader>xl :call RunXmlLint()<CR>
 
