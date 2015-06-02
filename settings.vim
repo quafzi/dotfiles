@@ -143,7 +143,7 @@ if has("gui_running")
 
       set guifont=Ubuntu\ Mono:h14,Menlo\ Regular:h12,Monospace:h12
     else
-      set guifont=Monospace\ 10
+      set guifont=Monospace\ 8
     endif
 
     " Disable menu bar
