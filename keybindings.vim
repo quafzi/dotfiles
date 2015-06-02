@@ -106,11 +106,17 @@ inoremap <left> <Esc>:bp<CR>
 inoremap <right> <Esc>:bn<CR>
 
 " Use first five tabs like in Chrome or Sublime (Command-$Number)
-map <D-1> 1gt
-map <D-2> 2gt
-map <D-3> 3gt
-map <D-4> 4gt
-map <D-5> 5gt
+map <C-1> 1gt
+map <C-2> 2gt
+map <C-3> 3gt
+map <C-4> 4gt
+map <C-5> 5gt
+
+map <Leader>1 1gt
+map <Leader>2 2gt
+map <Leader>3 3gt
+map <Leader>4 4gt
+map <Leader>5 5gt
 
 " Use CTRL + direction to move from one split to another
 nnoremap <C-J> <C-W><C-J>
