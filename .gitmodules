@@ -45,7 +45,7 @@
 	url = https://github.com/mileszs/ack.vim.git
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
-	url = git://github.com/kien/ctrlp.vim.git
+	url = https://github.com/kien/ctrlp.vim.git
 [submodule "bundle/vim-endwise"]
 	path = bundle/vim-endwise
 	url = https://github.com/tpope/vim-endwise.git
@@ -66,19 +66,19 @@
 	url = https://github.com/nelstrom/vim-visual-star-search.git
 [submodule "bundle/dispatch"]
 	path = bundle/dispatch
-	url = git://github.com/tpope/vim-dispatch.git
+	url = https://github.com/tpope/vim-dispatch.git
 [submodule "bundle/surround"]
 	path = bundle/surround
 	url = https://github.com/tpope/vim-surround.git
 [submodule "bundle/handlebars"]
 	path = bundle/handlebars
-	url = git://github.com/nono/vim-handlebars.git
+	url = https://github.com/nono/vim-handlebars.git
 [submodule "bundle/tslime"]
 	path = bundle/tslime
 	url = https://github.com/jgdavey/tslime.vim.git
 [submodule "bundle/ultisnips"]
 	path = bundle/ultisnips
-	url = git://github.com/SirVer/ultisnips.git
+	url = https://github.com/SirVer/ultisnips.git
 [submodule "bundle/vim-coffee-script"]
 	path = bundle/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
