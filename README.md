@@ -18,7 +18,7 @@ If you want to use the distraction free writing mode (Control-F10), you also nee
 Use the following code to grep the repo and symlink it.
 
 ```bash
-$ git clone --recursive https://github.com/quafzi/vim.git ~/.vim && ln -fs ~/.vim/vimrc ~/.vimrc
+$ git clone --recursive https://github.com/quafzi/vim-config.git ~/.vim && ln -fs ~/.vim/vimrc ~/.vimrc
 ```
 
 ### Long version
@@ -29,7 +29,7 @@ $ git clone --recursive https://github.com/quafzi/vim.git ~/.vim && ln -fs ~/.vi
 $ cd ~
 $ mv .vim .vim_backup
 $ mv .vimrc .vimrc_backup
-$ git clone https://github.com/quafzi/vim.git .vim
+$ git clone https://github.com/quafzi/vim-config.git .vim
 ```
 
 * Initialize git submodules.
