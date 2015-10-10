@@ -8,8 +8,10 @@ set encoding=utf-8
 " Automatically read files when they were changed on the filesystem
 set autoread
 
-" Set the leader key to comma
+" Set the leader key to comma and <space>
 let mapleader=","
+nmap <space> <Leader>
+vmap <space> <Leader>
 
 " Show line numbers (absolute ones)
 " relative ones would be relativenumber
