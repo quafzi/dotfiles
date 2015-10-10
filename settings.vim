@@ -48,3 +48,7 @@ autocmd FileType markdown let &colorcolumn=""
 " Airline
 let g:airline_powerline_fonts = 1
 set laststatus=2
+
+" 'Hidden' buffers -- i.e., don't require saving before editing another file.
+" Calling quit will prompt you to save unsaved buffers anyways.
+set hidden
