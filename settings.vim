@@ -38,6 +38,7 @@ set cursorline
 
 " Highlight current column
 set cursorcolumn
+highlight cursorcolumn cterm=NONE ctermbg=NONE ctermfg=DarkGray
 
 " Highlight max line length
 set colorcolumn
