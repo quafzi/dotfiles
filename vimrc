@@ -23,7 +23,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-abolish'               " :%Subvert/facilit{y,ies}/building{,s}/g
 Plug 'tpope/vim-projectionist'
-Plug 'marijnh/tern_for_vim'
 
 
 source ~/.vim/functions.vim
