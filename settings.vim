@@ -55,3 +55,9 @@ set hidden
 
 " Show current command in the lower right corner
 set showcmd
+
+" Automatically load plugins based on file extension
+filetype plugin on
+
+" Automatically indent based on file extension
+filetype indent on
