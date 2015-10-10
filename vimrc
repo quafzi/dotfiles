@@ -22,6 +22,7 @@ Plug 'quafzi/snipmate.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-abolish'               " :%Subvert/facilit{y,ies}/building{,s}/g
+Plug 'tpope/vim-fugitive'              " Git integration
 Plug 'tpope/vim-projectionist'
 
 
