@@ -41,6 +41,6 @@ set cursorcolumn
 highlight cursorcolumn cterm=NONE ctermbg=NONE ctermfg=DarkGray
 
 " Highlight max line length
-set colorcolumn
 let &colorcolumn=join(range(81,999),",")
+let &colorcolumn="80,".join(range(121,999),",")
 autocmd FileType markdown let &colorcolumn=""
