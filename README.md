@@ -2,7 +2,7 @@
 
 This config has support for [tmux-mem-cpu](http://github.com/thewtex/tmux-mem-cpu-load).
 
-Prefix mapped to Ctrl-A for `screen` users.
+Prefix mapped to Ctrl-space.
 
 Installation
 ------------
