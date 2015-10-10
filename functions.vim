@@ -12,3 +12,9 @@ function! CompileRst()
 
     silent! execute open
 endfunction
+
+" Builds tags file
+function! BuildTags()
+    let cmd = '!ctags -R --languages=php --totals=yes --tag-relative=yes --PHP-kinds=+cf-v .'
+    execute cmd
+endfunction
