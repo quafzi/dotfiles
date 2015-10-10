@@ -8,17 +8,23 @@ endif
 
 call plug#begin()
 
-Plug 'NickLaMuro/vimux'
 Plug 'airblade/vim-gitgutter'
+Plug 'bling/vim-airline'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'corntrace/bufexplorer'
 Plug 'digitaltoad/vim-jade'
 Plug 'edkolev/tmuxline.vim'
 Plug 'godlygeek/tabular'
 Plug 'kien/ctrlp.vim'
+Plug 'NickLaMuro/vimux'
 Plug 'plasticboy/vim-markdown'
 Plug 'quafzi/snipmate.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-abolish'               " :%Subvert/facilit{y,ies}/building{,s}/g
+Plug 'tpope/vim-projectionist'
+Plug 'marijnh/tern_for_vim'
+
 
 source ~/.vim/functions.vim
 source ~/.vim/settings.vim
