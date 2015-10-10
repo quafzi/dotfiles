@@ -44,3 +44,7 @@ highlight cursorcolumn cterm=NONE ctermbg=NONE ctermfg=DarkGray
 let &colorcolumn=join(range(81,999),",")
 let &colorcolumn="80,".join(range(121,999),",")
 autocmd FileType markdown let &colorcolumn=""
+
+" Airline
+let g:airline_powerline_fonts = 1
+set laststatus=2
