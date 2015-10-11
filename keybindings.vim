@@ -16,6 +16,9 @@ map <C-c> :bd<CR>
 " Search tag with ,s
 nmap <Leader>s <Esc>:tag<space>
 
+" Scroll 8 lines before reaching screen edge
+set scrolloff=8
+
 " Jump to tag with ,j
 nmap <Leader>j <Esc><C-]>
 
