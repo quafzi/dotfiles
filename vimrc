@@ -25,10 +25,12 @@ Plug 'tpope/vim-abolish'               " :%Subvert/facilit{y,ies}/building{,s}/g
 Plug 'tpope/vim-fugitive'              " Git integration
 Plug 'tpope/vim-projectionist'
 
-
-source ~/.vim/functions.vim
-source ~/.vim/settings.vim
-source ~/.vim/settings/nerdtree.vim
-source ~/.vim/keybindings.vim
-
 call plug#end()
+
+runtime functions.vim
+runtime settings.vim
+
+" include settings folder recursive (!)
+runtime! settings/*.vim
+
+runtime keybindings.vim
