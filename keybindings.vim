@@ -10,6 +10,9 @@ nnoremap <Leader><space> :<Esc>:b#<CR>
 " Open vimrc file with ,v
 nmap <leader>v :tabedit $MYVIMRC<CR>
 
+" Close buffer with CTRL-C
+map <C-c> :bd<CR>
+
 " Search tag with ,s
 nmap <Leader>s <Esc>:tag<space>
 
