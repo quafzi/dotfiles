@@ -28,6 +28,7 @@ Plug 'tpope/vim-projectionist'
 
 source ~/.vim/functions.vim
 source ~/.vim/settings.vim
+source ~/.vim/settings/nerdtree.vim
 source ~/.vim/keybindings.vim
 
 call plug#end()
