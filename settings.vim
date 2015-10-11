@@ -45,6 +45,13 @@ let &colorcolumn=join(range(81,999),",")
 let &colorcolumn="80,".join(range(121,999),",")
 autocmd FileType markdown let &colorcolumn=""
 
+" Show stuff like end of line, tabs and so on
+set list
+
+" Change signs for end of line, trailing whitespaces and tabs (needs :set list)
+"set listchars=tab:▸\ ,eol:¬,trail:\·
+set listchars=tab:▸\ ,trail:\·
+
 " Airline
 let g:airline_powerline_fonts = 1
 g:airline#extensions#syntastic#enabled
