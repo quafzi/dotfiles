@@ -33,6 +33,13 @@ map <Leader>h1 yypVr=o
 map <Leader>h2 yypVr-o
 map <Leader>h3 yypVr~o
 
+" Disable NUL character
+map <Nul> <Nop>
+cmap <Nul> <Nop>
+imap <Nul> <Nop>
+nmap <Nul> <Nop>
+vmap <Nul> <Nop>
+
 " Use tab to toggle between matching brackets
 nnoremap <tab> %
 vnoremap <tab> %
