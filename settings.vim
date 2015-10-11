@@ -52,6 +52,16 @@ set list
 "set listchars=tab:▸\ ,eol:¬,trail:\·
 set listchars=tab:▸\ ,trail:\·
 
+" Detect .phtml and .tpl files as PHP
+autocmd BufNewFile,BufRead *.phtml setlocal ft=php
+
+" 4 space indenting for some specific file types
+autocmd BufNewFile,BufRead *.php setlocal ts=4 sts=4 sw=4 expandtab
+autocmd BufNewFile,BufRead *.phtml setlocal ts=4 sts=4 sw=4 expandtab
+
+" Enabled spell checking and set textwidth to 80 characters for markdown and text files
+autocmd BufNewFile,BufRead *.md,*.markdown,*.txt setlocal spell textwidth=80
+
 " Airline
 let g:airline_powerline_fonts = 1
 g:airline#extensions#syntastic#enabled
