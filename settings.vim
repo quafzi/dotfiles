@@ -30,6 +30,13 @@ set showbreak=…
 set splitbelow
 set splitright
 
+" Highlight search results
+set hlsearch
+highlight Search ctermbg=Yellow ctermfg=Black
+
+" Already jump to the first hit during a search process
+set incsearch
+
 " Set tab width, tab width on deletion and of course use spaces instead of tabs
 set ts=2 sts=2 sw=2 expandtab
 
