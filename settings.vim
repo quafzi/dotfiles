@@ -30,6 +30,9 @@ set showbreak=…
 set splitbelow
 set splitright
 
+" Disable swap files creation
+set noswapfile
+
 " Highlight search results
 set hlsearch
 highlight Search ctermbg=Yellow ctermfg=Black
