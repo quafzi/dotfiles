@@ -33,6 +33,10 @@ set splitright
 " Disable swap files creation
 set noswapfile
 
+" Enable case insensitivity, but enable case insensitivity if there is at least one upper letter
+set ignorecase
+set smartcase
+
 " Highlight search results
 set hlsearch
 highlight Search ctermbg=Yellow ctermfg=Black
