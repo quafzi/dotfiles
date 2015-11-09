@@ -33,6 +33,9 @@ map <Leader>h1 yypVr=o
 map <Leader>h2 yypVr-o
 map <Leader>h3 yypVr~o
 
+" Save via ,,
+map ,, :w<CR>
+
 " Disable NUL character
 map <Nul> <Nop>
 cmap <Nul> <Nop>
