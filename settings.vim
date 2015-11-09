@@ -52,7 +52,7 @@ set cursorline
 
 " Highlight current column
 set cursorcolumn
-highlight cursorcolumn cterm=NONE ctermbg=NONE ctermfg=DarkGray
+highlight cursorcolumn cterm=NONE ctermbg=237 ctermfg=NONE
 
 " Highlight max line length
 let &colorcolumn=join(range(81,999),",")
