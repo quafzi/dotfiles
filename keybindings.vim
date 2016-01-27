@@ -48,6 +48,11 @@ vmap <Nul> <Nop>
 nnoremap <tab> %
 vnoremap <tab> %
 
+" Insert matching parenthesis automatically
+imap ( ()<ESC>i
+imap [ []<ESC>i
+imap { {}<ESC>i
+
 " Use CTRL + direction to move from one split to another
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
