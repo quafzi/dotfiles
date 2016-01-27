@@ -22,9 +22,12 @@ Plug 'pld-linux/vim-syntax-vcl'
 Plug 'quafzi/snipmate.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
+Plug 'tobyS/pdv'
+Plug 'tobyS/vmustache'
 Plug 'tpope/vim-abolish'               " :%Subvert/facilit{y,ies}/building{,s}/g
 Plug 'tpope/vim-fugitive'              " Git integration
 Plug 'tpope/vim-projectionist'
+Plug 'wavded/vim-stylus'               " stylus syntax highlighting
 
 call plug#end()
 
