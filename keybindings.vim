@@ -35,6 +35,7 @@ map <Leader>h3 yypVr~o
 
 " Save via ,,
 map ,, :w<CR>
+imap ,, <Esc>:w<cr>
 
 " Disable NUL character
 map <Nul> <Nop>
