@@ -55,8 +55,8 @@ set cursorcolumn
 highlight cursorcolumn cterm=NONE ctermbg=237 ctermfg=NONE
 
 " Highlight max line length
-let &colorcolumn=join(range(81,999),",")
-let &colorcolumn="80,".join(range(121,999),",")
+highlight colorcolumn ctermbg=237 ctermfg=Red
+let &colorcolumn="80,120"
 autocmd FileType markdown let &colorcolumn=""
 
 " Show stuff like end of line, tabs and so on
