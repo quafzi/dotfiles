@@ -78,7 +78,6 @@ autocmd BufNewFile,BufRead *.md,*.markdown,*.txt setlocal spell textwidth=80
 
 " Airline
 let g:airline_powerline_fonts = 1
-g:airline#extensions#syntastic#enabled
 set laststatus=2
 
 " 'Hidden' buffers -- i.e., don't require saving before editing another file.
