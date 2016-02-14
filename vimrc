@@ -39,3 +39,10 @@ runtime settings.vim
 runtime! settings/*.vim
 
 runtime keybindings.vim
+
+" enable per-project configuration files
+set exrc
+" disable unsafe commands in your project-specific .vimrc
+" This will prevent :autocmd, shell and write commands from being run inside
+" project-specific .vimrc files unless they’re owned by you.
+set secure
