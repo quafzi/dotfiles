@@ -10,6 +10,9 @@ nnoremap <Leader><space> :<Esc>:b#<CR>
 " Open vimrc file with ,v
 nmap <leader>v :tabedit $MYVIMRC<CR>
 
+" Force saving as sudo with ,w
+map <Leader>ww :w !sudo tee %<CR>
+
 " Close buffer with CTRL-C
 map <C-c> :bd<CR>
 
