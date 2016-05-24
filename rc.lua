@@ -97,6 +97,8 @@ myawesomemenu = {
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+                                    { "lock screen", "xscreensaver-command --lock" },
+                                    { "suspend", "systemctl suspend" },
                                     { "open terminal", terminal }
                                   }
                         })
@@ -271,7 +273,10 @@ globalkeys = awful.util.table.join(
                   awful.util.getdir("cache") .. "/history_eval")
               end),
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end)
+    awful.key({ modkey }, "p", function() menubar.show() end),
+
+    -- Lock screen
+    awful.key({ modkey }, "-", function () awful.util.spawn("xscreensaver-command --lock") end)
 )
 
 clientkeys = awful.util.table.join(
