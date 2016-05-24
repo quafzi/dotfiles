@@ -96,7 +96,13 @@ myawesomemenu = {
    { "quit", awesome.quit }
 }
 
+screenlayoutmenu = {
+   { "auto", "xrandr --auto" },
+   { "ext | notebook", "xrandr --output DP-1 --auto --left-of LVDS-1" }
+}
+
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+                                    { "screen layout", screenlayoutmenu },
                                     { "lock screen", "xscreensaver-command --lock" },
                                     { "suspend", "systemctl suspend" },
                                     { "open terminal", terminal }
