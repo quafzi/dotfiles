@@ -4,10 +4,10 @@ map! jj <Esc>
 " Toggle NERDtree with ,n
 map <Leader>n :NERDTreeToggle<CR>
 
-" Switch to the alternate buffer with ,SPACE
+" Switch to the alternate buffer with ,<space>
 nnoremap <Leader><space> :<Esc>:b#<CR>
 
-" Open vimrc file with ,v
+" Open vimrc file with <space>v
 nmap <leader>v :tabedit $MYVIMRC<CR>
 
 " Force saving as sudo with ,w
