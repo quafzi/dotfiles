@@ -187,3 +187,5 @@ mode "$monitors" {
 }
 
 bindsym $mod+m mode "$monitors"
+
+exec --no-startup-id nm-applet
