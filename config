@@ -189,3 +189,4 @@ mode "$monitors" {
 bindsym $mod+m mode "$monitors"
 
 exec --no-startup-id nm-applet
+exec --no-startup-id owncloud
