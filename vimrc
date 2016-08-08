@@ -32,6 +32,7 @@ Plug 'tpope/vim-abolish'               " :%Subvert/facilit{y,ies}/building{,s}/g
 Plug 'tpope/vim-fugitive'              " Git integration
 Plug 'tpope/vim-projectionist'
 Plug 'wavded/vim-stylus'               " stylus syntax highlighting
+Plug 'xavierchow/vim-sequence-diagram' " preview for sequence diagrams
 
 call plug#end()
 
