@@ -23,6 +23,7 @@ Plug 'evidens/vim-twig'
 Plug 'NickLaMuro/vimux'
 Plug 'plasticboy/vim-markdown'
 Plug 'pld-linux/vim-syntax-vcl'
+Plug 'quafzi/vim-flow-diagram'         " preview for flow diagrams
 Plug 'quafzi/snipmate.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
