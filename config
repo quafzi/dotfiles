@@ -192,3 +192,4 @@ bindsym $mod+m mode "$monitors"
 
 exec --no-startup-id nm-applet
 exec --no-startup-id owncloud
+exec --no-startup-id setxkbmap -option ctrl:nocaps
