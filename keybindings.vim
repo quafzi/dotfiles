@@ -10,6 +10,9 @@ nnoremap <Leader><space> :<Esc>:b#<CR>
 " Open vimrc file with <space>v
 nmap <leader>v :tabedit $MYVIMRC<CR>
 
+" Use Enter to toggle folds
+nnoremap <expr> <CR> foldlevel('.') ? 'za' : '<CR>'
+
 " Force saving as sudo with ,w
 map <Leader>ww :w !sudo tee %<CR>
 
