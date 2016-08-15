@@ -9,6 +9,7 @@ endif
 call plug#begin()
 
 Plug 'airblade/vim-gitgutter'
+Plug 'alvan/vim-php-manual'
 Plug 'bling/vim-airline'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'corntrace/bufexplorer'
