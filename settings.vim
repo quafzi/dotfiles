@@ -1,6 +1,5 @@
 " Colorscheme
-set background=dark
-colorscheme monokai
+colorscheme quafzi
 
 " Set UTF-8 as default encoding
 set encoding=utf-8
@@ -36,10 +35,6 @@ set noswapfile
 " Enable case insensitivity, but enable case insensitivity if there is at least one upper letter
 set ignorecase
 set smartcase
-
-" Highlight search results
-set hlsearch
-highlight Search ctermbg=Yellow ctermfg=Black
 
 " Already jump to the first hit during a search process
 set incsearch
