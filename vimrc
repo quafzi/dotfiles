@@ -20,6 +20,7 @@ Plug 'godlygeek/tabular'
 Plug 'jiangmiao/auto-pairs'
 Plug 'joonty/vdebug'
 Plug 'kien/ctrlp.vim'
+Plug 'moll/vim-bbye'                   " close buffer without closing the split it lives in
 Plug 'evidens/vim-twig'
 Plug 'NickLaMuro/vimux'
 Plug 'plasticboy/vim-markdown'

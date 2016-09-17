@@ -17,7 +17,7 @@ nnoremap <expr> <CR> foldlevel('.') ? 'za' : '<CR>'
 map <Leader>ww :w !sudo tee %<CR>
 
 " Close buffer with CTRL-C
-map <C-c> :bd<CR>
+map <C-c> :Bdelete<CR>
 
 " Search tag with ,s
 nmap <Leader>s <Esc>:tag<space>
