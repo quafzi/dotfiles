@@ -206,7 +206,7 @@ mode "$mode_launcher" {
     bindsym f exec firefox, mode "default"
     bindsym t exec thunderbird, mode "default"
     bindsym g exec gajim, mode "default"
-    bindsym m exec roxterm -T mail -e tmuxinator mail, mode "default"
+    bindsym m exec roxterm -T mail -e zsh -i -c "tmuxinator mail", mode "default"
     bindsym i exec roxterm -T irc -e weechat, mode "default"
 
     bindsym Esc mode "default"
