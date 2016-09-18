@@ -196,7 +196,6 @@ bindsym $mod+m mode "$monitors"
 
 # shortcuts to focus specific windows
 bindsym $mod+Shift+b [class="Firefox"] focus
-bindsym $mod+Shift+k [class="Keepass"] focus
 bindsym $mod+Shift+m [title="tmuxinator mail"] focus
 bindsym $mod+Shift+i [title="weechat"] focus
 
@@ -209,7 +208,6 @@ mode "$mode_launcher" {
     bindsym g exec gajim, mode "default"
     bindsym m exec roxterm -T mail -e tmuxinator mail, mode "default"
     bindsym i exec roxterm -T irc -e weechat, mode "default"
-    bindsym k exec keepassx, mode "default"
 
     bindsym Esc mode "default"
     bindsym Return mode "default"
@@ -219,7 +217,6 @@ mode "$mode_launcher" {
 assign [class="^Thunderbird$"] → 1
 assign [title="^mail$"] → 1
 assign [class="^Gajim$"] → 2
-assign [class="^Keepassx$"] → 6
 assign [title="^irc$"] → 2
 
 # Start some background services
