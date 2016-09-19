@@ -13,5 +13,5 @@ This includes configurations for:
 Usage
 =====
 
-1. Clone this, e.g. to ~/dotfiles
-2. Symlink configs via ``~/dotfiles/symlink``.
+1. Clone this, e.g. to ``~/dotfiles``.
+2. Symlink configs via ``~/dotfiles/symlink.sh``.
