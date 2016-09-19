@@ -45,3 +45,21 @@ else
     echo "$configPath/i3 already exists. You may want to delete it and run this script again."
   fi
 fi
+
+# RANGER
+if [ ! -L $configPath/ranger/scope.sh ]; then
+  ln -s $dotfilesPath/ranger/scope.sh $configPath/ranger/scope.sh
+else
+  if [ "`readlink $configPath/ranger/scope.sh`" != "$dotfilesPath/ranger/scope.sh" ]; then
+    echo "$configPath/ranger/scope.sh already exists. You may want to delete it and run this script again."
+  fi
+fi
+
+# ROFI
+if [ ! -L $configPath/rofi/config ]; then
+  ln -s $dotfilesPath/rofi/config $configPath/rofi/config
+else
+  if [ "`readlink $configPath/rofi/config`" != "$dotfilesPath/rofi/config" ]; then
+    echo "$configPath/rofi/config already exists. You may want to delete it and run this script again."
+  fi
+fi
