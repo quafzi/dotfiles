@@ -7,5 +7,11 @@ This includes configurations for:
 * awesome
 * i3
 * tmux
-* vim
+* (n)vim
 * et al.
+
+Usage
+=====
+
+1. Clone this, e.g. to ~/dotfiles
+2. Symlink configs via ``~/dotfiles/symlink``.
