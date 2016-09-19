@@ -17,6 +17,7 @@ PHP Debugging
 * add these lines to your ``php.ini``
 
   ::
+  
       [xdebug]
       xdebug.remote_enable=1
       xdebug.remote_host=localhost
