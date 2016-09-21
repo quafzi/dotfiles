@@ -1,0 +1,47 @@
+[user]
+  name = Thomas Birke
+  email = quafzi@netextreme.de
+
+[core]
+  autocrlf = input
+  commentChar = ";"
+  editor = vim
+  excludesfile = ~/dotfiles/git/gitignore
+  filemode = false
+  pager = diff-so-fancy
+
+[alias]
+  br = branch
+  ci = commit
+  co = checkout
+  df = diff
+  lol = log --graph --decorate --pretty=format:\"%C(yellow)%h %Cblue%ci%Cred%d%Cgreen %an%Creset %s\" --abbrev-commit --all
+  smu = submodule update --init
+  st = status
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+
+[push]
+  default = simple
+
+[commit]
+  gpgsign = true
+
+[diff]
+	compactionHeuristic = true
+
+[fetch]
+	recurseSubmodules = false
+
+[merge]
+  tool = vimdiff
+
+[color "diff"]
+  whitespace = red reverse
+
+[diff-so-fancy]
+  stripLeadingSymbols = true
+  changeHunkIndicators = true
