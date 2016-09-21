@@ -11,9 +11,7 @@ This includes configurations for:
 * (n)vim
 * et al.
 
-Usage
-=====
+Installation
+============
 
-1. Clone this to ``~/dotfiles``.
-2. Symlink configs via ``~/dotfiles/symlink.sh``.
-3. Load diff-so-fancy via ``~/dotfiles/bin/diff_so_fancy_install.sh``
+    git clone https://github.com/quafzi/dotfiles ~/dotfiles && ~/dotfiles/bin/symlink.sh && ~/dotfiles/bin/diff_so_fancy_install.sh
