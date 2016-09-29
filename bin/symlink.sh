@@ -89,3 +89,12 @@ else
     echo "∙ $configPath/rofi/config"
   fi
 fi
+
+if [ ! -e /usr/local/bin/brightness ]; then
+  ln -s $dotfilesPath/bin/brightness /usr/local/bin/brightness
+  echo "Please enable passwordless sudo for /usr/local/bin/brightness."
+fi
+
+if [ ! -e $HOME/.Xmodmap ]; then
+  ln -s $dotfilesPath/Xmodmap $HOME/.Xmodmap
+fi

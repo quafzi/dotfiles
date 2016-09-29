@@ -1,0 +1,23 @@
+# Increase volume
+"pactl set-sink-volume @DEFAULT_SINK@ +2%"
+  XF86AudioRaiseVolume
+
+# Decrease volume
+"pactl set-sink-volume @DEFAULT_SINK@ -2%"
+  XF86AudioLowerVolume
+
+# Mute
+"pactl set-sink-mute 0 toggle"
+  XF86AudioMute
+
+# Calculator
+"gnome-calculator"
+  XF86Calculator
+
+# Monitor Brightness Up
+"sudo brightness 10"
+  XF86MonBrightnessUp
+
+# Monitor Brightness Up
+"sudo brightness -10"
+  XF86MonBrightnessDown

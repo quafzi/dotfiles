@@ -1,0 +1,10 @@
+#!/bin/bash
+MAX=`cat /sys/class/backlight/intel_backlight/max_brightness`
+CURRENT=`cat /sys/class/backlight/intel_backlight/brightness`
+DIFF=0
+[[ $DIFF =~ ^-?[0-9]+$ ]] && DIFF=$1
+NEW="$(($CURRENT+$DIFF*$MAX/100))"
+echo "try $NEW"
+if [[ 0 -le $NEW && $NEW -le $MAX ]]; then
+  echo "$NEW" > /sys/class/backlight/intel_backlight/brightness
+fi
