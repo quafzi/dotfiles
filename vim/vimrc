@@ -16,6 +16,7 @@ Plug 'corntrace/bufexplorer'
 Plug 'diepm/vim-rest-console'
 Plug 'digitaltoad/vim-jade'
 Plug 'edkolev/tmuxline.vim'
+Plug 'francoiscabrol/ranger.vim'       " use ,f to browse file system
 Plug 'godlygeek/tabular'
 Plug 'jiangmiao/auto-pairs'
 Plug 'joonty/vdebug'
