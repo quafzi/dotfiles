@@ -95,6 +95,12 @@ if [ ! -e /usr/local/bin/brightness ]; then
   echo "Please enable passwordless sudo for /usr/local/bin/brightness."
 fi
 
+# XBINDKEYS
+if [ ! -e $HOME/.xbindkeysrc ]; then
+  ln -s $dotfilesPath/xbindkeysrc $HOME/.xbindkeysrc
+fi
+
+# XMODMAP
 if [ ! -e $HOME/.Xmodmap ]; then
   ln -s $dotfilesPath/Xmodmap $HOME/.Xmodmap
 fi
