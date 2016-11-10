@@ -28,6 +28,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'pld-linux/vim-syntax-vcl'
 Plug 'quafzi/vim-flow-diagram'         " preview for flow diagrams
 Plug 'quafzi/snipmate.vim'
+Plug 'rhysd/committia.vim'             " add status and diff view to commit buffers
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'tobyS/pdv'
