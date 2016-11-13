@@ -30,7 +30,7 @@ set splitbelow
 set splitright
 
 " Disable swap files creation
-set noswapfile
+"set noswapfile
 
 " Enable case insensitivity, but enable case insensitivity if there is at least one upper letter
 set ignorecase
