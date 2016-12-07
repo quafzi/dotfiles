@@ -34,6 +34,18 @@ else
   fi
 fi
 
+# TMUX
+if [ ! -e $HOME/.tmux.conf ]; then
+  ln -s $dotfilesPath/tmux/tmux.conf ~/.tmux.conf
+  echo "✓ .tmux.conf"
+else
+  if [ "`readlink ~/.tmux.conf`" != "$dotfilesPath/tmux/tmux.conf" ]; then
+    echo "✗ ~/.tmux.conf already exists. You may want to delete it and run this script again."
+  else
+    echo "∙ ~/.tmux.conf"
+  fi
+fi
+
 # GIT
 if [ ! -e $HOME/.gitconfig ]; then
   ln -s $dotfilesPath/git/gitconfig ~/.gitconfig
