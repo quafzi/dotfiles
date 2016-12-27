@@ -6,7 +6,7 @@
   autocrlf = input
   commentChar = ";"
   editor = vim
-  excludesfile = ~/dotfiles/git/gitignore
+  excludesfile = ~/dotfiles/git/gitignore_global
   filemode = false
   pager = diff-so-fancy
 
