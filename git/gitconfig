@@ -9,6 +9,7 @@
   excludesfile = ~/dotfiles/git/gitignore_global
   filemode = false
   pager = diff-so-fancy
+  pager = less -R --chop-long-lines --no-init --quit-if-one-screen
 
 [alias]
   br = branch
@@ -19,10 +20,28 @@
   smu = submodule update --init
   st = status
 
+[pager] # --no-pager (for opt out)
+  dd = true
+  dsf = true
+  icdiff = true
+  status = true
+  diff = diff-so-fancy | $(git config core.pager)
+  log  = diff-so-fancy | $(git config core.pager)
+  show = diff-so-fancy | $(git config core.pager)
+
+[diff] # use `git clean` for removing `*.orig* files after merge
+    tool = vimdiff
+
+[difftool]
+  prompt = false
+
 [color]
   diff = auto
   status = auto
   branch = auto
+
+[color "diff"]
+  whitespace = red reverse
 
 [push]
   default = simple
@@ -38,9 +57,6 @@
 
 [merge]
   tool = vimdiff
-
-[color "diff"]
-  whitespace = red reverse
 
 [diff-so-fancy]
   stripLeadingSymbols = true
