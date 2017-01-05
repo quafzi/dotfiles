@@ -7,6 +7,16 @@ map <Leader>n :NERDTreeToggle<CR>
 " Switch to the alternate buffer with ,<space>
 nnoremap <Leader><space> :<Esc>:b#<CR>
 
+" Show file history with ,bh
+nmap <Leader>bh :FzHistory<CR>
+" Show file history in new split with ,bs
+nmap <Leader>bs :new<CR>:FzHistory<CR>
+" Show file history in new vsplit with ,bv
+nmap <Leader>bv :vnew<CR>:FzHistory<CR>
+
+" Show buffers with ,bb
+nmap <Leader>bb :FzBuffers<CR>
+
 " Open vimrc file with <space>v
 nmap <leader>v :tabedit $MYVIMRC<CR>
 

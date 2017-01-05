@@ -12,7 +12,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-php-manual'
 Plug 'bling/vim-airline'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'corntrace/bufexplorer'
 Plug 'diepm/vim-rest-console'
 Plug 'digitaltoad/vim-jade'
 Plug 'editorconfig/editorconfig-vim'
@@ -21,6 +20,7 @@ Plug 'francoiscabrol/ranger.vim'       " use ,f to browse file system
 Plug 'godlygeek/tabular'
 Plug 'jiangmiao/auto-pairs'
 Plug 'joonty/vdebug'
+Plug 'junegunn/fzf.vim'                " fuzzy file finder
 Plug 'kien/ctrlp.vim'
 Plug 'moll/vim-bbye'                   " close buffer without closing the split it lives in
 Plug 'evidens/vim-twig'
@@ -41,6 +41,9 @@ Plug 'wavded/vim-stylus'               " stylus syntax highlighting
 Plug 'xavierchow/vim-sequence-diagram' " preview for sequence diagrams
 
 call plug#end()
+
+set rtp+=~/.fzf "fuzzy file finder <https://github.com/justinmk/fzf>
+let g:fzf_command_prefix = 'Fz'
 
 runtime functions.vim
 runtime settings.vim
