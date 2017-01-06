@@ -102,6 +102,21 @@ else
   fi
 fi
 
+# KHAL – CLI calendar
+if [ ! -e $configPath/khal/khal.conf ]; then
+  if [ ! -e $configPath/khal ]; then
+    mkdir $configPath/khal
+  fi
+  ln -s $dotfilesPath/khal/khal.conf $configPath/khal/khal.conf
+else
+  if [ "`readlink $configPath/khal/khal.conf`" != "$dotfilesPath/khal/khal.conf" ]; then
+    echo "✗ $configPath/khal/khal.conf already exists. You may want to delete it and run this script again."
+  else
+    echo "∙ $configPath/khal/khal.conf"
+  fi
+fi
+
+# SMALL SCRIPT TO ADJUST DISPLAY BRIGHTNESS
 if [ ! -e /usr/local/bin/brightness ]; then
   ln -s $dotfilesPath/bin/brightness /usr/local/bin/brightness
   echo "Please enable passwordless sudo for /usr/local/bin/brightness."
