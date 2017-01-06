@@ -205,7 +205,7 @@ mode "$mode_launcher" {
     bindsym m exec roxterm -T mail -e zsh -i -c "tmuxinator mail", mode "default"
     bindsym i exec roxterm -T irc -e weechat, mode "default"
 
-    bindsym Esc mode "default"
+    bindsym Escape mode "default"
     bindsym Return mode "default"
 }
 
