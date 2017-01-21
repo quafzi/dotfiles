@@ -40,6 +40,8 @@ set smartcase
 set incsearch
 " Highlight search hits
 set hlsearch
+" Live :substitude in neovim
+set inccommand=split
 
 " Set tab width, tab width on deletion and of course use spaces instead of tabs
 set ts=2 sts=2 sw=2 expandtab
