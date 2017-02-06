@@ -1,0 +1,27 @@
+#!/bin/bash
+if [[ "$#" -ne "1" || "$1" = "help" || "$1" = "-h" || "$1" = "--help" ]]; then
+  echo "This small script kicks of a project:"
+  echo " * create Firefox profile from a given base profile"
+  echo " * create project dir"
+  echo ""
+  echo "Usage: create-project profileName"
+  echo "  replace profileName by the alphanumeric name of your project (but don't name it ›help‹ ☺)"
+  exit 1
+fi
+projectName=$1
+projectDir="$HOME/projects/$projectName"
+firefoxProfile="$projectDir/.firefoxProfile"
+
+echo "Creating project directory $projectDir"
+mkdir $projectDir
+echo "Creating firefox profile $firefoxProfile"
+cp -R $HOME/.mozilla/firefox/base $firefoxProfile
+lastProfile=$(grep -P "\\[Profile[0-9]+\\]" $HOME/.mozilla/firefox/profiles.ini | tail -1)
+newProfile="$(echo $lastProfile | sed -r 's/\[Profile([0-9]+)\]/echo \"\[Profile$((\1+1))\]\"/ge')
+Name=$projectName
+IsRelative=0
+Path=$firefoxProfile
+
+"
+echo "$newProfile" >> $HOME/.mozilla/firefox/profiles.ini
+#cd $projectDir

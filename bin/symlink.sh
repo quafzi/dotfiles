@@ -122,6 +122,11 @@ if [ ! -e /usr/local/bin/brightness ]; then
   echo "Please enable passwordless sudo for /usr/local/bin/brightness."
 fi
 
+# Small script to kickoff projects
+if [ ! -e /usr/local/bin/create-project ]; then
+  ln -s $dotfilesPath/bin/create-project $HOME/bin/create-project
+fi
+
 # Script to remove dangling docker images
 if [ ! -e ~/bin/docker-remove-dangling ]; then
   ln -s $dotfilesPath/bin/brightness ~/bin/docker-remove-dangling
