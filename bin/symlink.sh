@@ -122,6 +122,11 @@ if [ ! -e /usr/local/bin/brightness ]; then
   echo "Please enable passwordless sudo for /usr/local/bin/brightness."
 fi
 
+# Script to remove dangling docker images
+if [ ! -e ~/bin/docker-remove-dangling ]; then
+  ln -s $dotfilesPath/bin/brightness ~/bin/docker-remove-dangling
+fi
+
 # XBINDKEYS
 if [ ! -e $HOME/.xbindkeysrc ]; then
   ln -s $dotfilesPath/xbindkeysrc $HOME/.xbindkeysrc
