@@ -1,6 +1,6 @@
 #!/bin/bash
 configPath=$XDG_CONFIG_HOME
-dotfilesPath="~/dotfiles"
+dotfilesPath="$HOME/dotfiles"
 if [ "" == "$configPath" ]; then
   defaultConfigPath="~/.config"
   echo "\$XDG_CONFIG_HOME is not set. Which path should I use (default: $defaultConfigPath)?"
@@ -135,7 +135,7 @@ if [ ! -e /usr/local/bin/brightness ]; then
 fi
 
 # Small script to kickoff projects
-if [ ! -e /usr/local/bin/create-project ]; then
+if [ ! -e $HOME/bin/create-project ]; then
   ln -s $dotfilesPath/bin/create-project $HOME/bin/create-project
 fi
 
