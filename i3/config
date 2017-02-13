@@ -42,6 +42,8 @@ bindsym $mod+Shift+q kill
 
 # Rofi is a program launcher as well as a window switcher
 bindsym $mod+d exec rofi -show combi
+# Launch password manager
+bindsym $mod+p exec rofi-pass
 
 # change focus
 bindsym $mod+h focus left
