@@ -92,6 +92,17 @@ else
   fi
 fi
 
+# MUTT
+if [ ! -e $HOME/.muttrc ]; then
+  ln -s $dotfilesPath/mutt/muttrc $HOME/.muttrc
+fi
+if [ ! -e $HOME/.mutt/colors ]; then
+  ln -s $dotfilesPath/mutt/colors $HOME/.mutt/colors
+fi
+if [ ! -e $HOME/.mutt/macros ]; then
+  ln -s $dotfilesPath/mutt/macros $HOME/.mutt/macros
+fi
+
 # RANGER
 if [ ! -e $configPath/ranger/scope.sh ]; then
   ln -s $dotfilesPath/ranger/scope.sh $configPath/ranger/scope.sh
