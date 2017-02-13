@@ -201,7 +201,7 @@ bindsym $mod+Shift+i [title="weechat"] focus
 set $mode_launcher Launch: [f]irefox [c]hromium [g]ajim [m]utt [i]rc [k]eepassx
 bindsym $mod+o mode "$mode_launcher"
 mode "$mode_launcher" {
-    bindsym f exec firefox, mode "default"
+    bindsym f exec firefox -P, mode "default"
     bindsym c exec chromium, mode "default"
     bindsym g exec gajim, mode "default"
     bindsym m exec roxterm -T mail -e zsh -i -c "tmuxinator mail", mode "default"
