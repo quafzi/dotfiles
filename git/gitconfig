@@ -61,3 +61,6 @@
 [diff-so-fancy]
   stripLeadingSymbols = true
   changeHunkIndicators = true
+
+[tag]
+  sort = version:refname
