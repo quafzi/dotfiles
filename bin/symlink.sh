@@ -46,6 +46,18 @@ else
   fi
 fi
 
+# ZSH
+if [ ! -e $HOME/.zshrc ]; then
+  ln -s $dotfilesPath/zsh/zshrc ~/.zshrc
+  echo "✓ .zshrc"
+else
+  if [ "`readlink ~/.zshrc`" != "$dotfilesPath/zsh/zshrc" ]; then
+    echo "✗ ~/.zshrc already exists. You may want to delete it and run this script again."
+  else
+    echo "∙ ~/.zshrc"
+  fi
+fi
+
 # GIT
 if [ ! -e $HOME/.gitconfig ]; then
   ln -s $dotfilesPath/git/gitconfig ~/.gitconfig
