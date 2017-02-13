@@ -126,16 +126,16 @@ else
 fi
 
 # KHAL – CLI calendar
-if [ ! -e $configPath/khal/khal.conf ]; then
+if [ ! -e $configPath/khal/config ]; then
   if [ ! -e $configPath/khal ]; then
     mkdir $configPath/khal
   fi
-  ln -s $dotfilesPath/khal/khal.conf $configPath/khal/khal.conf
+  ln -s $dotfilesPath/khal/config $configPath/khal/config
 else
-  if [ "`readlink $configPath/khal/khal.conf`" != "$dotfilesPath/khal/khal.conf" ]; then
-    echo "✗ $configPath/khal/khal.conf already exists. You may want to delete it and run this script again."
+  if [ "`readlink $configPath/khal/config`" != "$dotfilesPath/khal/config" ]; then
+    echo "✗ $configPath/khal/config already exists. You may want to delete it and run this script again."
   else
-    echo "∙ $configPath/khal/khal.conf"
+    echo "∙ $configPath/khal/config"
   fi
 fi
 
