@@ -33,6 +33,16 @@ else
     echo "∙ $configPath/nvim"
   fi
 fi
+if [ ! -e $configPath/nyaovim ]; then
+  ln -s $dotfilesPath/nyaovim $configPath/nyaovim
+  echo "✓ $configPath/nyaovim"
+else
+  if [ "`readlink $configPath/nyaovim`" != "$dotfilesPath/nyaovim" ]; then
+    echo "✗ $configPath/nyaovim already exists. You may want to delete it and run this script again."
+  else
+    echo "∙ $configPath/nyaovim"
+  fi
+fi
 
 # TMUX
 if [ ! -e $HOME/.tmux.conf ]; then
