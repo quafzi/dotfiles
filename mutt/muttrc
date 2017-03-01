@@ -74,6 +74,11 @@ macro index,pager <F10> \
 
 set xterm_set_titles  = yes
 
+auto_view text/html
+
+# prefer plain text
+alternative_order text/plain text/enriched text/html
+
 # Colors
 source ~/.mutt/colors
 #color header     brightgreen   default  "^(from|subject):" # bold sender
