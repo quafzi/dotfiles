@@ -74,6 +74,7 @@ autocmd BufNewFile,BufRead *.phtml setlocal ts=4 sts=4 sw=4 expandtab
 
 " Enabled spell checking and set textwidth to 80 characters for markdown and text files
 autocmd BufNewFile,BufRead *.md,*.markdown,*.txt setlocal spell textwidth=80
+autocmd FileType gitcommit set textwidth=72
 
 " Airline
 let g:airline_powerline_fonts = 1
