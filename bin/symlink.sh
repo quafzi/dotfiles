@@ -165,6 +165,11 @@ if [ ! -e ~/bin/docker-remove-dangling ]; then
   ln -s $dotfilesPath/bin/brightness ~/bin/docker-remove-dangling
 fi
 
+# ABCDE
+if [ ! -e $HOME/.abcde.conf ]; then
+  ln -s $dotfilesPath/abcde/.abcde.conf $HOME/.abcde.conf
+fi
+
 # XBINDKEYS
 if [ ! -e $HOME/.xbindkeysrc ]; then
   ln -s $dotfilesPath/xbindkeysrc $HOME/.xbindkeysrc
