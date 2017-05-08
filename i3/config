@@ -198,12 +198,13 @@ bindsym $mod+Shift+m [title="tmuxinator mail"] focus
 bindsym $mod+Shift+i [title="weechat"] focus
 
 # Launch applications to certain workspaces
-set $mode_launcher Launch: [f]irefox [c]hromium [m]idori [g]ajim
+set $mode_launcher Launch: [c]hromium [f]irefox [g]ajim [i]ridium [m]idori
 bindsym $mod+o mode "$mode_launcher"
 mode "$mode_launcher" {
-    bindsym f exec firefox -P, mode "default"
     bindsym c exec chromium, mode "default"
+    bindsym f exec firefox -P, mode "default"
     bindsym g exec gajim, mode "default"
+    bindsym i exec iridium-browser, mode "default"
     bindsym m exec midori, mode "default"
 
     bindsym Escape mode "default"
