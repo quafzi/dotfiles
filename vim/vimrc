@@ -32,13 +32,14 @@ Plug 'quafzi/snipmate.vim'
 Plug 'rbgrouleff/bclose.vim'           " Autoclose ranger after use in neovim
 Plug 'rhysd/committia.vim'             " add status and diff view to commit buffers
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
 Plug 'tobyS/pdv'
 Plug 'tobyS/vmustache'
 Plug 'tpope/vim-abolish'               " :%Subvert/facilit{y,ies}/building{,s}/g
 Plug 'tpope/vim-fugitive'              " Git integration
 Plug 'tpope/vim-projectionist'
 Plug 'wavded/vim-stylus'               " stylus syntax highlighting
+Plug 'w0rp/ale'                        " On-the-fly syntax check
 Plug 'xavierchow/vim-sequence-diagram' " preview for sequence diagrams
 
 call plug#end()
