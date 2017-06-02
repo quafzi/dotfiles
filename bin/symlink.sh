@@ -79,6 +79,15 @@ else
     echo "∙ ~/.gitconfig"
   fi
 fi
+if [ ! -e $configPath/git/attributes ]; then
+  ln -s $dotfilesPath/git/config/attributes $configPath/git/attributes
+else
+  if [[ ! -L $configPath/git/attributes || "`readlink $configPath/git/attributes`" != "$dotfilesPath/git/config/attributes" ]]; then
+    echo "✗ $configPath/git/attributes already exists. You may want to delete it and run this script again."
+  else
+    echo "∙ $configPath/git/attributes"
+  fi
+fi
 
 # AWESOME
 if [ ! -e $configPath/awesome ]; then
@@ -87,7 +96,7 @@ else
   if [[ ! -L $configPath/awesome || "`readlink $configPath/awesome`" != "$dotfilesPath/awesome" ]]; then
     echo "✗ $configPath/awesome already exists. You may want to delete it and run this script again."
   else
-    echo "∙ .vimrc"
+    echo "∙ $configPath/awesome"
   fi
 fi
 
@@ -98,7 +107,7 @@ else
   if [[ ! -L $configPath/i3 || "`readlink $configPath/i3`" != "$dotfilesPath/i3" ]]; then
     echo "✗ $configPath/i3 already exists. You may want to delete it and run this script again."
   else
-    echo "∙ .vimrc"
+    echo "∙ $configPath/i3"
   fi
 fi
 
