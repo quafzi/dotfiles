@@ -17,6 +17,9 @@ nmap <Leader>bv :vnew<CR>:FzHistory<CR>
 " Show buffers with ,bb
 nmap <Leader>bb :FzBuffers<CR>
 
+" Show file selector ,bf
+nmap <Leader>bf :FzFiles<CR>
+
 " Open vimrc file with <space>v
 nmap <leader>v :tabedit $MYVIMRC<CR>
 
