@@ -195,13 +195,19 @@ mode "$monitors" {
 
 bindsym $mod+m mode "$monitors"
 
+# assign workspaces to outputs
+workspace 2 output DP1
+workspace 1 output HDMI2
+workspace 8 output eDP1
+workspace 9 output eDP1
+
 # shortcuts to focus specific windows
 bindsym $mod+Shift+b [class="Firefox"] focus
 bindsym $mod+Shift+m [title="tmuxinator mail"] focus
 bindsym $mod+Shift+i [title="weechat"] focus
 
 # Launch applications to certain workspaces
-set $mode_launcher Launch: [c]hromium [f]irefox [g]ajim [i]ridium [m]idori
+set $mode_launcher Launch: [c]hromium [f]irefox [g]ajim [i]ridium [m]idori [n]autilus
 bindsym $mod+o mode "$mode_launcher"
 mode "$mode_launcher" {
     bindsym c exec chromium, mode "default"
@@ -209,6 +215,7 @@ mode "$mode_launcher" {
     bindsym g exec gajim, mode "default"
     bindsym i exec iridium-browser, mode "default"
     bindsym m exec midori, mode "default"
+    bindsym n exec nautilus, mode "default"
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
