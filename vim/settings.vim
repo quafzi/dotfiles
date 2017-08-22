@@ -92,3 +92,6 @@ filetype plugin on
 
 " Automatically indent based on file extension
 filetype indent on
+
+"Trigger emoji completion with ^X^U
+set completefunc=emoji#complete

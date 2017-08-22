@@ -21,6 +21,7 @@ Plug 'godlygeek/tabular'
 Plug 'jiangmiao/auto-pairs'
 Plug 'joonty/vdebug'
 Plug 'junegunn/fzf.vim'                " fuzzy file finder
+Plug 'junegunn/vim-emoji'              " emoji support 😏
 Plug 'kien/ctrlp.vim'
 Plug 'moll/vim-bbye'                   " close buffer without closing the split it lives in
 Plug 'evidens/vim-twig'

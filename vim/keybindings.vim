@@ -35,6 +35,9 @@ map <C-c> :Bdelete<CR>
 " Search tag with ,s
 nmap <Leader>s <Esc>:tag<space>
 
+" Replace :emoji_name: into Emoji
+nmap <Leader>e <Esc>:%s/:\([^: \/<]\+\):/\=emoji#for(submatch(1), submatch(0))/g<CR>
+
 " Scroll 8 lines before reaching screen edge
 set scrolloff=8
 
