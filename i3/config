@@ -214,7 +214,7 @@ set $mode_launcher Launch: [c]hromium [f]irefox [g]ajim [i]ridium [m]idori [n]au
 bindsym $mod+o mode "$mode_launcher"
 mode "$mode_launcher" {
     bindsym c exec chromium, mode "default"
-    bindsym f exec firefox -P, mode "default"
+    bindsym f exec firefox --ProfileManager --new-instance, mode "default"
     bindsym g exec gajim, mode "default"
     bindsym i exec iridium-browser, mode "default"
     bindsym m exec midori, mode "default"
