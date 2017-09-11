@@ -144,6 +144,20 @@ else
   fi
 fi
 
+# ROFI-PASS
+if [ ! -e $configPath/rofi-pass/config ]; then
+  if [ ! -e $configPath/rofi-pass ]; then
+    mkdir $configPath/rofi-pass
+  fi
+  ln -s $dotfilesPath/rofi-pass/config $configPath/rofi-pass/config
+else
+  if [ "`readlink $configPath/rofi-pass/config`" != "$dotfilesPath/rofi-pass/config" ]; then
+    echo "✗ $configPath/rofi-pass/config already exists. You may want to delete it and run this script again."
+  else
+    echo "∙ $configPath/rofi-pass/config"
+  fi
+fi
+
 # KHAL – CLI calendar
 if [ ! -e $configPath/khal/config ]; then
   if [ ! -e $configPath/khal ]; then
