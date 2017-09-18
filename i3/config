@@ -91,24 +91,53 @@ bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
+bindsym $mod+KP_Multiply focus parent
+bindsym $mod+Mod2+KP_Multiply focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
+bindsym $mod+KP_Divide focus child
+bindsym $mod+Mod2+KP_Divide focus child
 
 # switch to workspace
 bindsym $mod+1 workspace 1
+bindsym $mod+KP_End workspace 1
+bindsym $mod+Mod2+KP_1 workspace 1
 bindsym $mod+2 workspace 2
+bindsym $mod+KP_Down workspace 2
+bindsym $mod+Mod2+KP_2 workspace 2
 bindsym $mod+3 workspace 3
+bindsym $mod+KP_Next workspace 3
+bindsym $mod+Mod2+KP_3 workspace 3
 bindsym $mod+4 workspace 4
+bindsym $mod+KP_Left workspace 4
+bindsym $mod+Mod2+KP_4 workspace 4
 bindsym $mod+5 workspace 5
+bindsym $mod+KP_Begin workspace 5
+bindsym $mod+Mod2+KP_5 workspace 5
 bindsym $mod+6 workspace 6
+bindsym $mod+KP_Right workspace 6
+bindsym $mod+Mod2+KP_6 workspace 6
 bindsym $mod+7 workspace 7
+bindsym $mod+KP_Home workspace 7
+bindsym $mod+Mod2+KP_7 workspace 7
 bindsym $mod+8 workspace 8
+bindsym $mod+KP_Up workspace 8
+bindsym $mod+Mod2+KP_8 workspace 8
 bindsym $mod+9 workspace 9
+bindsym $mod+KP_Prior workspace 9
+bindsym $mod+Mod2+KP_9 workspace 9
 bindsym $mod+0 workspace 10
+bindsym $mod+KP_Insert workspace 10
+bindsym $mod+Mod2+KP_0 workspace 10
+
 # cycle through active workspaces
 bindsym $mod+plus workspace next
+bindsym $mod+KP_Add workspace next
+bindsym $mod+Mod2+KP_Add workspace next
 bindsym $mod+minus workspace prev
+bindsym $mod+KP_Subtract workspace prev
+bindsym $mod+Mod2+KP_Subtract workspace prev
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
