@@ -1,14 +1,26 @@
-#!/usr/bin/env bash
+#!/usr/bin/php
+<?php
+$threshold = 10; // percent
 
-THRESHOLD=10 # percent
+$acpiPaths = explode("\n", trim(`find /sys/class/power_supply/ -name 'BAT*'`));
 
-acpi_path=$(find /sys/class/power_supply/ -name 'BAT*' | head -1)
-charge_now=$(cat "$acpi_path/energy_now")
-charge_full=$(cat "$acpi_path/energy_full")
-charge_status=$(cat "$acpi_path/status")
-charge_percent=$(echo "$(echo "$charge_now / $charge_full * 100" | bc -l)" | awk '{printf("%d\n",$1 + 0.5)}')
-message="Battery running critically low at $charge_percent%!"
+$chargeFull = array_reduce($acpiPaths, function($now, $path) {
+    return $now + trim(`cat $path/energy_full`);
+}, 0);
+$chargeNow = array_reduce($acpiPaths, function($now, $path) {
+    return $now + trim(`cat $path/energy_now`);
+}, 0);
+$discharging = array_reduce($acpiPaths, function($now, $path) {
+    $status = trim(`cat $path/status`);
+    return $status == 'Discharging' || $now;
+}, false);
 
-if [[ $charge_status == 'Discharging' ]] && [[ $charge_percent -le $THRESHOLD ]]; then
-  DISPLAY=:0.0 /usr/bin/i3-nagbar -t warning -m "$message"
-fi
+$currentLevel = $chargeNow*100/$chargeFull;
+
+if ($discharging && $currentLevel <= $threshold) {
+    $message = sprintf(
+        'Battery running critically low at %s%%!',
+        number_format($currentLevel, 2)
+    );
+    `DISPLAY=:0.0 /usr/bin/i3-nagbar -t warning -m "$message"`;
+}
