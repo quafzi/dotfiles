@@ -82,3 +82,10 @@ alias mux="tmuxinator"
 . /etc/profile.d/vte.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent > ~/.my-ssh-agent
+fi
+if [[ "$SSH_AGENT_PID" == "" ]]; then
+  eval "$(<~/.my-ssh-agent)"
+fi
+
