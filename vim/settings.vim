@@ -95,3 +95,6 @@ filetype indent on
 
 "Trigger emoji completion with ^X^U
 set completefunc=emoji#complete
+
+"Notes
+:let g:notes_directories = ['~/owncloud/notes']

@@ -43,6 +43,8 @@ Plug 'tpope/vim-projectionist'
 Plug 'wavded/vim-stylus'               " stylus syntax highlighting
 Plug 'w0rp/ale'                        " On-the-fly syntax check
 Plug 'xavierchow/vim-sequence-diagram' " preview for sequence diagrams
+Plug 'xolox/vim-misc'                  " dependency of xolox/vim-notes
+Plug 'xolox/vim-notes'                 " easy notes
 
 call plug#end()
 
