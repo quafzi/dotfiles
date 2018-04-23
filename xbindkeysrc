@@ -15,9 +15,9 @@
   XF86Calculator
 
 # Monitor Brightness Up
-"sudo brightness 10"
+"lux -a 500"
   XF86MonBrightnessUp
 
 # Monitor Brightness Up
-"sudo brightness -10"
+"lux -s 500"
   XF86MonBrightnessDown
