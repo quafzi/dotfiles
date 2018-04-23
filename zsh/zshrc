@@ -62,21 +62,8 @@ export TERM="xterm-256color"
 
 source ~/.nvm/nvm.sh
 
-# e.g. you can use gsq 3 to squash the last three commits to one.
-function gsq(){
-  git reset --soft HEAD~$1 && \
-  git commit --edit -m \
-  "$(git log --format=%B --reverse HEAD..HEAD@{1})"
-}
-
-# disable glob expansion for the puli command
-alias puli='set -f;puli';puli(){ command puli "$@";set +f; }
-
-alias s='npm start'
-alias t='npm test'
 alias tea="sleep 300; play /usr/share/sounds/ubuntu/stereo/phone-incoming-call.ogg; notify-send -u critical 'Tee ist fertig...'"
 alias dc="docker-compose"
-alias mack="ack --ignore-dir=var"
 alias mux="tmuxinator"
 
 . /etc/profile.d/vte.sh
