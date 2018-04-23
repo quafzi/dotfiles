@@ -198,6 +198,11 @@ if [ ! -e $HOME/.xbindkeysrc ]; then
   ln -s $dotfilesPath/xbindkeysrc $HOME/.xbindkeysrc
 fi
 
+# XINITRC
+if [ ! -e $HOME/.xinitrc ]; then
+  ln -s $dotfilesPath/xinitrc $HOME/.xinitrc
+fi
+
 # XMODMAP
 if [ ! -e $HOME/.Xmodmap ]; then
   ln -s $dotfilesPath/Xmodmap $HOME/.Xmodmap
