@@ -89,17 +89,6 @@ else
   fi
 fi
 
-# AWESOME
-if [ ! -e $configPath/awesome ]; then
-  ln -s $dotfilesPath/awesome $configPath/awesome
-else
-  if [[ ! -L $configPath/awesome || "`readlink $configPath/awesome`" != "$dotfilesPath/awesome" ]]; then
-    echo "✗ $configPath/awesome already exists. You may want to delete it and run this script again."
-  else
-    echo "∙ $configPath/awesome"
-  fi
-fi
-
 # I3
 if [ ! -e $configPath/i3 ]; then
   ln -s $dotfilesPath/i3 $configPath/i3
@@ -108,6 +97,17 @@ else
     echo "✗ $configPath/i3 already exists. You may want to delete it and run this script again."
   else
     echo "∙ $configPath/i3"
+  fi
+fi
+
+# KITTY
+if [ ! -e $configPath/kitty ]; then
+  ln -s $dotfilesPath/kitty $configPath/kitty
+else
+  if [[ ! -L $configPath/kitty || "`readlink $configPath/kitty`" != "$dotfilesPath/kitty" ]]; then
+    echo "✗ $configPath/kitty already exists. You may want to delete it and run this script again."
+  else
+    echo "∙ $configPath/kitty"
   fi
 fi
 
