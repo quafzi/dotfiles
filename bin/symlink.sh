@@ -198,6 +198,11 @@ if [ ! -e $HOME/.xbindkeysrc ]; then
   ln -s $dotfilesPath/xbindkeysrc $HOME/.xbindkeysrc
 fi
 
+# DUNST desktop notifications
+if [ ! -e $configPath/dunst/dunstrc ]; then
+  ln -s $dotfilesPath/dunst/dunstrc $configPath/dunst/dunstrc
+fi
+
 # XINITRC
 if [ ! -e $HOME/.xinitrc ]; then
   ln -s $dotfilesPath/xinitrc $HOME/.xinitrc
