@@ -2,7 +2,7 @@
 configPath=$XDG_CONFIG_HOME
 dotfilesPath="$HOME/dotfiles"
 if [ "" == "$configPath" ]; then
-  defaultConfigPath="~/.config"
+  defaultConfigPath=$HOME/.config
   echo "\$XDG_CONFIG_HOME is not set. Which path should I use (default: $defaultConfigPath)?"
   read $configPath
   if [ "" == "$configPath" ]; then
@@ -10,205 +10,91 @@ if [ "" == "$configPath" ]; then
   fi
 fi
 
+echo ""
+echo "*************"
+echo "config path:"
+echo " $configPath"
+echo "*************"
+echo ""
+
 # VIM
-if [ ! -e $HOME/.vimrc ]; then
-  ln -s $dotfilesPath/vim/vimrc ~/.vimrc
-  echo "✓ .vimrc"
-else
-  if [ `readlink $HOME/.vimrc` != "$dotfilesPath/vim/vimrc" ]; then
-    echo "✗ ~/.vimrc already exists. You may want to delete it and run this script again."
-  else
-    echo "∙ .vimrc"
-  fi
-fi
+ln -si $dotfilesPath/vim/vimrc ~/.vimrc
 
 # NEOVIM
-if [ ! -e $configPath/nvim ]; then
-  ln -s $dotfilesPath/vim $configPath/nvim
-  echo "✓ $configPath/nvim"
-else
-  if [ "`readlink $configPath/nvim`" != "$dotfilesPath/vim" ]; then
-    echo "✗ $configPath/nvim already exists. You may want to delete it and run this script again."
-  else
-    echo "∙ $configPath/nvim"
-  fi
-fi
-if [ ! -e $configPath/nyaovim ]; then
-  ln -s $dotfilesPath/nyaovim $configPath/nyaovim
-  echo "✓ $configPath/nyaovim"
-else
-  if [ "`readlink $configPath/nyaovim`" != "$dotfilesPath/nyaovim" ]; then
-    echo "✗ $configPath/nyaovim already exists. You may want to delete it and run this script again."
-  else
-    echo "∙ $configPath/nyaovim"
-  fi
-fi
+ln -si $dotfilesPath/vim $configPath/nvim
+ln -si $dotfilesPath/nyaovim $configPath/nyaovim
 
 # TMUX
-if [ ! -e $HOME/.tmux.conf ]; then
-  ln -s $dotfilesPath/tmux/tmux.conf ~/.tmux.conf
-  echo "✓ .tmux.conf"
-else
-  if [ "`readlink ~/.tmux.conf`" != "$dotfilesPath/tmux/tmux.conf" ]; then
-    echo "✗ ~/.tmux.conf already exists. You may want to delete it and run this script again."
-  else
-    echo "∙ ~/.tmux.conf"
-  fi
-fi
+ln -si $dotfilesPath/tmux/tmux.conf ~/.tmux.conf
 
 # ZSH
-if [ ! -e $HOME/.zshrc ]; then
-  ln -s $dotfilesPath/zsh/zshrc ~/.zshrc
-  echo "✓ .zshrc"
-else
-  if [ "`readlink ~/.zshrc`" != "$dotfilesPath/zsh/zshrc" ]; then
-    echo "✗ ~/.zshrc already exists. You may want to delete it and run this script again."
-  else
-    echo "∙ ~/.zshrc"
-  fi
-fi
+ln -si $dotfilesPath/zsh/zshrc ~/.zshrc
 
 # GIT
-if [ ! -e $HOME/.gitconfig ]; then
-  ln -s $dotfilesPath/git/gitconfig ~/.gitconfig
-  echo "✓ .gitconfig"
-else
-  if [ "`readlink ~/.gitconfig`" != "$dotfilesPath/git/gitconfig" ]; then
-    echo "✗ ~/.gitconfig already exists. You may want to delete it and run this script again."
-  else
-    echo "∙ ~/.gitconfig"
-  fi
+ln -si $dotfilesPath/git/gitconfig ~/.gitconfig
+if [ ! -e $configPath/git ]; then
+  mkdir $configPath/git
 fi
-if [ ! -e $configPath/git/attributes ]; then
-  ln -s $dotfilesPath/git/config/attributes $configPath/git/attributes
-else
-  if [[ ! -L $configPath/git/attributes || "`readlink $configPath/git/attributes`" != "$dotfilesPath/git/config/attributes" ]]; then
-    echo "✗ $configPath/git/attributes already exists. You may want to delete it and run this script again."
-  else
-    echo "∙ $configPath/git/attributes"
-  fi
-fi
+ln -si $dotfilesPath/git/config/attributes $configPath/git/attributes
 
 # I3
-if [ ! -e $configPath/i3 ]; then
-  ln -s $dotfilesPath/i3 $configPath/i3
-else
-  if [[ ! -L $configPath/i3 || "`readlink $configPath/i3`" != "$dotfilesPath/i3" ]]; then
-    echo "✗ $configPath/i3 already exists. You may want to delete it and run this script again."
-  else
-    echo "∙ $configPath/i3"
-  fi
-fi
+ln -si $dotfilesPath/i3 $configPath/i3
 
 # KITTY
-if [ ! -e $configPath/kitty ]; then
-  ln -s $dotfilesPath/kitty $configPath/kitty
-else
-  if [[ ! -L $configPath/kitty || "`readlink $configPath/kitty`" != "$dotfilesPath/kitty" ]]; then
-    echo "✗ $configPath/kitty already exists. You may want to delete it and run this script again."
-  else
-    echo "∙ $configPath/kitty"
-  fi
-fi
+ln -si $dotfilesPath/kitty $configPath/kitty
 
 # MUTT
-if [ ! -e $HOME/.muttrc ]; then
-  ln -s $dotfilesPath/mutt/muttrc $HOME/.muttrc
+ln -si $dotfilesPath/mutt/muttrc $HOME/.muttrc
+if [ ! -e $HOME/.mutt ]; then
+  mkdir $HOME/.mutt
 fi
-if [ ! -e $HOME/.mutt/colors ]; then
-  ln -s $dotfilesPath/mutt/colors $HOME/.mutt/colors
-fi
-if [ ! -e $HOME/.mutt/macros ]; then
-  ln -s $dotfilesPath/mutt/macros $HOME/.mutt/macros
-fi
+ln -si $dotfilesPath/mutt/colors $HOME/.mutt/colors
+ln -si $dotfilesPath/mutt/macros $HOME/.mutt/macros
 
 # RANGER
-if [ ! -e $configPath/ranger/scope.sh ]; then
-  ln -s $dotfilesPath/ranger/scope.sh $configPath/ranger/scope.sh
-else
-  if [ "`readlink $configPath/ranger/scope.sh`" != "$dotfilesPath/ranger/scope.sh" ]; then
-    echo "✗ $configPath/ranger/scope.sh already exists. You may want to delete it and run this script again."
-  else
-    echo "∙ $configPath/ranger/scope.sh"
-  fi
+if [ ! -e $configPath/ranger ]; then
+  mkdir $configPath/ranger
 fi
+ln -si $dotfilesPath/ranger/scope.sh $configPath/ranger/scope.sh
 
 # ROFI
-if [ ! -e $configPath/rofi/config ]; then
-  ln -s $dotfilesPath/rofi/config $configPath/rofi/config
-else
-  if [ "`readlink $configPath/rofi/config`" != "$dotfilesPath/rofi/config" ]; then
-    echo "✗ $configPath/rofi/config already exists. You may want to delete it and run this script again."
-  else
-    echo "∙ $configPath/rofi/config"
-  fi
+if [ ! -e $configPath/rofi ]; then
+  mkdir $configPath/rofi
 fi
+ln -si $dotfilesPath/rofi/config $configPath/rofi/config
 
 # ROFI-PASS
-if [ ! -e $configPath/rofi-pass/config ]; then
-  if [ ! -e $configPath/rofi-pass ]; then
-    mkdir $configPath/rofi-pass
-  fi
-  ln -s $dotfilesPath/rofi-pass/config $configPath/rofi-pass/config
-else
-  if [ "`readlink $configPath/rofi-pass/config`" != "$dotfilesPath/rofi-pass/config" ]; then
-    echo "✗ $configPath/rofi-pass/config already exists. You may want to delete it and run this script again."
-  else
-    echo "∙ $configPath/rofi-pass/config"
-  fi
+if [ ! -e $configPath/rofi-pass ]; then
+  mkdir $configPath/rofi-pass
 fi
+ln -si $dotfilesPath/rofi-pass/config $configPath/rofi-pass/config
 
 # KHAL – CLI calendar
-if [ ! -e $configPath/khal/config ]; then
-  if [ ! -e $configPath/khal ]; then
-    mkdir $configPath/khal
-  fi
-  ln -s $dotfilesPath/khal/config $configPath/khal/config
-else
-  if [ "`readlink $configPath/khal/config`" != "$dotfilesPath/khal/config" ]; then
-    echo "✗ $configPath/khal/config already exists. You may want to delete it and run this script again."
-  else
-    echo "∙ $configPath/khal/config"
-  fi
+if [ ! -e $configPath/khal ]; then
+  mkdir $configPath/khal
 fi
-
-# SMALL SCRIPT TO ADJUST DISPLAY BRIGHTNESS
-if [ ! -e /usr/local/bin/brightness ]; then
-  ln -s $dotfilesPath/bin/brightness /usr/local/bin/brightness
-  echo "Please enable passwordless sudo for /usr/local/bin/brightness."
-fi
-
-# Small script to kickoff projects
-if [ ! -e $HOME/bin/create-project ]; then
-  ln -s $dotfilesPath/bin/create-project $HOME/bin/create-project
-fi
+ln -si $dotfilesPath/khal/config $configPath/khal/config
 
 # Script to remove dangling docker images
-if [ ! -e ~/bin/docker-remove-dangling ]; then
-  ln -s $dotfilesPath/bin/brightness ~/bin/docker-remove-dangling
+if [ ! -e $HOME/bin ]; then
+  mkdir $HOME/bin
 fi
+ln -si $dotfilesPath/bin/docker-remove-dangling $HOME/bin/docker-remove-dangling
 
 # ABCDE
-if [ ! -e $HOME/.abcde.conf ]; then
-  ln -s $dotfilesPath/abcde/.abcde.conf $HOME/.abcde.conf
-fi
+ln -si $dotfilesPath/abcde/.abcde.conf $HOME/.abcde.conf
 
 # XBINDKEYS
-if [ ! -e $HOME/.xbindkeysrc ]; then
-  ln -s $dotfilesPath/xbindkeysrc $HOME/.xbindkeysrc
-fi
+ln -si $dotfilesPath/xbindkeysrc $HOME/.xbindkeysrc
 
 # DUNST desktop notifications
-if [ ! -e $configPath/dunst/dunstrc ]; then
-  ln -s $dotfilesPath/dunst/dunstrc $configPath/dunst/dunstrc
+if [ ! -e $configPath/dunst ]; then
+  mkdir $configPath/dunst
 fi
+ln -si $dotfilesPath/dunst/dunstrc $configPath/dunst/dunstrc
 
 # XINITRC
-if [ ! -e $HOME/.xinitrc ]; then
-  ln -s $dotfilesPath/xinitrc $HOME/.xinitrc
-fi
+ln -si $dotfilesPath/xinitrc $HOME/.xinitrc
 
 # XMODMAP
-if [ ! -e $HOME/.Xmodmap ]; then
-  ln -s $dotfilesPath/Xmodmap $HOME/.Xmodmap
-fi
+ln -si $dotfilesPath/Xmodmap $HOME/.Xmodmap
