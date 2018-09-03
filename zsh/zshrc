@@ -75,3 +75,4 @@ else
     eval "$(<~/.my-ssh-agent)"
 fi
 
+alias gnome-control-center="XDG_CURRENT_DESKTOP=GNOME gnome-control-center"
