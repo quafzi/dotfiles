@@ -65,5 +65,12 @@
 
 [tag]
   sort = version:refname
+
+[filter "lfs"]
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+
 [credential]
 	helper = cache --timeout=9999999999999999
