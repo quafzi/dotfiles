@@ -10,6 +10,7 @@
   filemode = false
   pager = diff-so-fancy
   pager = less -R --chop-long-lines --no-init --quit-if-one-screen
+  attributesfile = ~/.gitattributes
 
 [alias]
   br = branch
