@@ -1,0 +1,14 @@
+#!/bin/bash
+config=$HOME/.check-push.list
+if [ ! -f $config ]; then
+  echo "This is the first time you run $0."
+  echo "I am now collecting a list of git repositories in your HOME."
+  for dir in `find $HOME/* -name .git -type d 2> /dev/null`; do
+    dirname $dir >> $config
+  done
+  echo "Please edit $config and remove repositories you want to ignore."
+fi
+while read git; do
+  cd $git
+  test "$(git rev-parse @{u})" = "$(git rev-parse HEAD)" || (echo "WAIT! There are changes in $git!"; exit 255)
+done < $config

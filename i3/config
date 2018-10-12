@@ -193,6 +193,8 @@ bar {
         status_command i3status
 }
 
+bindsym $mod+g exec --no-startup-id /home/thomas/dotfiles/bin/check-push
+
 set $Locker i3lock -c 003004 && sleep 1
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
