@@ -262,6 +262,7 @@ assign [class="^Gajim$"] → 2
 assign [title="^irc$"] → 2
 
 # Start some background services
+exec --no-startup-id gnome-keyring-daemon
 exec --no-startup-id nm-applet
 exec --no-startup-id owncloud
 exec --no-startup-id setxkbmap -option ctrl:nocaps
