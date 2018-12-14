@@ -31,7 +31,7 @@
   show = diff-so-fancy | $(git config core.pager)
 
 [diff] # use `git clean` for removing `*.orig* files after merge
-    tool = vimdiff
+  tool = vimdiff
 
 [difftool]
   prompt = false

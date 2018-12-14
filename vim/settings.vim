@@ -93,6 +93,10 @@ filetype plugin on
 " Automatically indent based on file extension
 filetype indent on
 
+" diff settings
+set diffopt+=algorithm:patience
+set diffopt+=indent-heuristic
+
 "Trigger emoji completion with ^X^U
 set completefunc=emoji#complete
 
