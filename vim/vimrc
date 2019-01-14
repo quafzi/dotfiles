@@ -19,6 +19,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'francoiscabrol/ranger.vim'       " use ,f to browse file system
 Plug 'godlygeek/tabular'
 Plug 'GutenYe/json5.vim'               " syntax highlighting for json5
+Plug 'isobit/vim-caddyfile'            " Caddyfile syntax support
 Plug 'jiangmiao/auto-pairs'
 Plug 'johngrib/vim-game-code-break'    " Play an Arkanoid clone with your code ☺
 Plug 'joonty/vdebug'
