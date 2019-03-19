@@ -37,6 +37,7 @@ Plug 'rbgrouleff/bclose.vim'           " Autoclose ranger after use in neovim
 Plug 'rhysd/committia.vim'             " add status and diff view to commit buffers
 Plug 'scrooloose/nerdtree'
 Plug 'lifepillar/vim-mucomplete'       " nice autocompletion
+Plug 'Scuilion/markdown-drawer'        " Simplify navigation in large markdown files
 " Plug 'scrooloose/syntastic'
 Plug 'tobyS/pdv'
 Plug 'tobyS/vmustache'
