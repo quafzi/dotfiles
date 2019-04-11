@@ -229,6 +229,20 @@ mode "$monitors" {
 
 bindsym $mod+m mode "$monitors"
 
+set $keyboardlayouts (u) US, (d) DE with dead keys, (D) DE, (c) DE with dead keys and ctrl:nocaps, (C) DE with ctrl:nocaps
+mode "$keyboardlayouts" {
+    bindsym u exec --no-startup-id setxkbmap -layout us, mode "default"
+    bindsym d exec --no-startup-id setxkbmap -layout de -variant '' -option caps:capslock -option compose:caps, mode "default"
+    bindsym Shift+d exec --no-startup-id setxkbmap -layout de -variant nodeadkeys -option caps:capslock -option compose:caps, mode "default"
+    bindsym c exec --no-startup-id setxkbmap -layout de -variant '' -option ctrl:nocaps, mode "default"
+    bindsym Shift+c exec --no-startup-id setxkbmap -layout de -variant nodeadkeys -option ctrl:nocaps, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+BackSpace mode "$keyboardlayouts"
+
 # assign workspaces to outputs
 workspace 2 output DP1
 workspace 1 output HDMI2
@@ -260,5 +274,4 @@ assign [title="^irc$"] → 2
 exec --no-startup-id gnome-keyring-daemon
 exec --no-startup-id nm-applet
 exec --no-startup-id owncloud
-exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id system-config-printer-applet
