@@ -47,26 +47,20 @@ plugins=(archlinux git composer tmux tmuxinator z docker docker-compose symfony2
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:vendor/bin:/home/thomas/.gem/ruby/2.3.0/bin
+export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:vendor/bin
 
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-#alias ai="_ aptitude install"
 alias go="gnome-open"
 
 export EDITOR=nvim
 
 export TERM="xterm-256color"
 
-source ~/.nvm/nvm.sh
-
 alias tea="sleep 300; play /usr/share/sounds/ubuntu/stereo/phone-incoming-call.ogg; notify-send -u critical 'Tee ist fertig...'"
 alias dc="docker-compose"
-alias mux="tmuxinator"
-
-. /etc/profile.d/vte.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
