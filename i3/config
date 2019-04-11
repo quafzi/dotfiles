@@ -235,11 +235,6 @@ workspace 1 output HDMI2
 workspace 8 output eDP1
 workspace 9 output eDP1
 
-# shortcuts to focus specific windows
-bindsym $mod+Shift+b [class="Firefox"] focus
-bindsym $mod+Shift+m [title="tmuxinator mail"] focus
-bindsym $mod+Shift+i [title="weechat"] focus
-
 # Launch applications to certain workspaces
 set $mode_launcher Launch: [c]hromium [f]irefox [g]ajim [i]ridium [m]idori [n]autilus
 bindsym $mod+o mode "$mode_launcher"
