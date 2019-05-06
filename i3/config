@@ -273,5 +273,5 @@ assign [title="^irc$"] → 2
 # Start some background services
 exec --no-startup-id gnome-keyring-daemon
 exec --no-startup-id nm-applet
-exec --no-startup-id owncloud
+exec --no-startup-id nextcloud
 exec --no-startup-id system-config-printer-applet
