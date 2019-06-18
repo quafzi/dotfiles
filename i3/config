@@ -232,8 +232,8 @@ bindsym $mod+m mode "$monitors"
 set $keyboardlayouts (u) US, (d) DE with dead keys, (D) DE, (c) DE with dead keys and ctrl:nocaps, (C) DE with ctrl:nocaps
 mode "$keyboardlayouts" {
     bindsym u exec --no-startup-id setxkbmap -layout us, mode "default"
-    bindsym d exec --no-startup-id setxkbmap -layout de -variant '' -option caps:capslock -option compose:caps, mode "default"
-    bindsym Shift+d exec --no-startup-id setxkbmap -layout de -variant nodeadkeys -option caps:capslock -option compose:caps, mode "default"
+    bindsym d exec --no-startup-id setxkbmap -layout de -variant '' -option compose:caps, mode "default"
+    bindsym Shift+d exec --no-startup-id setxkbmap -layout de -variant nodeadkeys -option compose:caps, mode "default"
     bindsym c exec --no-startup-id setxkbmap -layout de -variant '' -option ctrl:nocaps, mode "default"
     bindsym Shift+c exec --no-startup-id setxkbmap -layout de -variant nodeadkeys -option ctrl:nocaps, mode "default"
 
@@ -269,6 +269,9 @@ assign [class="^Thunderbird$"] → 1
 assign [title="^mail$"] → 1
 assign [class="^Gajim$"] → 2
 assign [title="^irc$"] → 2
+
+# Init keyboard layout
+exec --no-startup-id setxkbmap -layout de -variant nodeadkeys -option compose:caps
 
 # Start some background services
 exec --no-startup-id gnome-keyring-daemon
