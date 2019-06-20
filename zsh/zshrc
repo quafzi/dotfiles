@@ -62,7 +62,16 @@ export TERM="xterm-256color"
 alias tea="sleep 300; play /usr/share/sounds/ubuntu/stereo/phone-incoming-call.ogg; notify-send -u critical 'Tee ist fertig...'"
 alias dc="docker-compose"
 
+function mftbuild {
+  remoteurl=`git remote get-url origin`
+  echo 'Updating package from remote url '$remoteurl
+  ssh maxxfit /var/www/maxxfit/packages/bin/satis build /var/www/maxxfit/packages/satis.json /var/www/maxxfit/packages/web -vv --repository-url $remoteurl
+}
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='ag --hidden -a --ignore .git -l -g ""' # let fzf find hidden files
+export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'" # via <https://github.com/sharkdp/bat/issues/357>
+
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     ssh-agent > ~/.my-ssh-agent
 else
