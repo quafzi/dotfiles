@@ -26,6 +26,7 @@ Plug 'joonty/vdebug'
 Plug 'junegunn/fzf.vim'                " fuzzy file finder
 Plug 'junegunn/vim-emoji'              " emoji support 😏
 Plug 'kien/ctrlp.vim'
+Plug 'kronos-io/kronos.vim'            " Kronos is a simple task and time manager for vim
 Plug 'moll/vim-bbye'                   " close buffer without closing the split it lives in
 Plug 'evidens/vim-twig'
 Plug 'NickLaMuro/vimux'
