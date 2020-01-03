@@ -270,6 +270,10 @@ assign [title="^mail$"] → 1
 assign [class="^Gajim$"] → 2
 assign [title="^irc$"] → 2
 
+# Enable floating for some applications
+for_window [class="Pavucontrol"] floating enable
+for_window [title="Taschenrechner"] floating enable
+
 # Init keyboard layout
 exec --no-startup-id setxkbmap -layout de -variant nodeadkeys -option compose:caps
 
