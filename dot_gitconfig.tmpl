@@ -1,16 +1,16 @@
 [user]
   name = Thomas Birke
-  email = quafzi@netextreme.de
+  email = {{ .git.email }}
 
 [core]
   autocrlf = input
   commentChar = ";"
   editor = nvim
-  excludesfile = ~/dotfiles/git/gitignore_global
+  excludesfile = ~/.config/git/gitignore_global
   filemode = false
   pager = diff-so-fancy
   pager = less -R --chop-long-lines --no-init --quit-if-one-screen
-  attributesfile = ~/.gitattributes
+  attributesfile = ~/.config/git/attributes
 
 [alias]
   br = branch
@@ -51,10 +51,10 @@
   gpgsign = true
 
 [diff]
-	compactionHeuristic = true
+  compactionHeuristic = true
 
 [fetch]
-	recurseSubmodules = false
+  recurseSubmodules = false
 
 [merge]
   tool = vimdiff
@@ -73,4 +73,4 @@
   smudge = git-lfs smudge -- %f
 
 [credential]
-	helper = cache --timeout=9999999999999999
+  helper = cache --timeout=9999999999999999

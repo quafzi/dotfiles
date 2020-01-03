@@ -1,17 +1,15 @@
-These are my dotfiles.
-
-Living in separate repositories before, they now get merged into one.
-
-This includes configurations for:
-
-* awesome
-* git
-* i3
-* tmux
-* (n)vim
-* et al.
+These are my dotfiles, that are now handled by [chezmoi](https://github.com/twpayne/chezmoi).
 
 Installation
 ============
 
-    git clone https://github.com/quafzi/dotfiles ~/dotfiles && ~/dotfiles/bin/symlink.sh && ~/dotfiles/bin/diff_so_fancy_install.sh
+    chezmoi init https://github.com/quafzi/dotfiles
+
+You can then see what would be changed:
+
+    chezmoi diff
+
+If you're happy with the changes then apply them:
+
+    chezmoi apply
+
