@@ -216,10 +216,7 @@ bindsym $mod+x mode "$mode_system"
 
 set $monitors Displays (d) DP left, (D) DP right, (v) VGA left, (V) VGA right, (a) auto
 mode "$monitors" {
-    bindsym d exec --no-startup-id xrandr --output DP-1 --auto --left-of LVDS-1, mode "default"
-    bindsym Shift+d exec --no-startup-id xrandr --output DP-1 --auto --right-of LVDS-1, mode "default"
-    bindsym v exec --no-startup-id xrandr --output VGA2 --auto --left-of LVDS2, mode "default"
-    bindsym Shift+v exec --no-startup-id xrandr --output VGA2 --auto --right-of LVDS2, mode "default"
+    bindsym d exec --no-startup-id {{ .i3.monitors.desk }}, mode "default"
     bindsym a exec --no-startup-id xrandr --auto, mode "default"
 
     # back to normal: Enter or Escape
@@ -256,8 +253,6 @@ mode "$mode_launcher" {
     bindsym c exec chromium, mode "default"
     bindsym f exec firefox-developer-edition --ProfileManager --new-instance, mode "default"
     bindsym g exec gajim, mode "default"
-    bindsym i exec iridium-browser, mode "default"
-    bindsym m exec midori, mode "default"
     bindsym n exec nautilus, mode "default"
 
     bindsym Escape mode "default"
@@ -278,7 +273,7 @@ for_window [title="Taschenrechner"] floating enable
 exec --no-startup-id setxkbmap -layout de -variant nodeadkeys -option compose:caps
 
 # Init monitor layout
-exec --no-startup-id xrandr --output HDMI-0 --auto --left-of DP-0, mode "default"
+exec --no-startup-id {{ .i3.monitors.desk }}, mode "default"
 
 # Start some background services
 exec --no-startup-id gnome-keyring-daemon
