@@ -1,0 +1,8 @@
+{{- $git_email := promptString "Git E-Mail" -}}
+{{- $xrandr_desk := promptString "xrandr command for desk use" -}}
+data:
+  git:
+    email: "{{ $git_email }}"
+  i3:
+    monitors:
+      desk: "{{ $xrandr_desk }}"
