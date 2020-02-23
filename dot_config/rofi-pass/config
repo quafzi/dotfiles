@@ -52,6 +52,7 @@ clip=primary
 #default_user=john_doe
 #default_user2=mary_ann
 #password_length=12
+default_user=:filename
 
 # Custom Keybindings
 autotype="Alt+1"
