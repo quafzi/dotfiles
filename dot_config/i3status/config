@@ -32,19 +32,19 @@ ethernet _first_ {
 }
 
 battery all {
-        format = "%status %percentage %remaining"
+        format = "🔋 %status %percentage %remaining"
 }
 
 disk "/" {
-        format = "%avail"
+        format = "💾 %avail"
 }
 
 load {
-        format = "%1min"
+        format = "🏃 %1min"
 }
 
 memory {
-        format = "%used | %available"
+        format = "%used / %available"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
 }
