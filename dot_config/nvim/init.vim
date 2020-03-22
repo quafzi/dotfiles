@@ -32,6 +32,7 @@ Plug 'evidens/vim-twig'
 Plug 'NickLaMuro/vimux'
 Plug 'plasticboy/vim-markdown'
 Plug 'pld-linux/vim-syntax-vcl'
+Plug 'posva/vim-vue'                   " syntax highlighting for Vue components
 Plug 'quafzi/vim-flow-diagram'         " preview for flow diagrams
 Plug 'quafzi/snipmate.vim'
 Plug 'qpkorr/vim-renamer'              " bulk-rename files using vim (launch via :Renamer in the files folder)
