@@ -37,7 +37,6 @@ Plug 'quafzi/vim-flow-diagram'         " preview for flow diagrams
 Plug 'quafzi/snipmate.vim'
 Plug 'qpkorr/vim-renamer'              " bulk-rename files using vim (launch via :Renamer in the files folder)
 Plug 'rbgrouleff/bclose.vim'           " Autoclose ranger after use in neovim
-Plug 'RRethy/vim-hexokinase'           " CSS colors
 Plug 'rhysd/committia.vim'             " add status and diff view to commit buffers
 Plug 'rhysd/git-messenger.vim'         " show git commit of current cursor position with ,gm
 Plug 'lifepillar/vim-mucomplete'       " nice autocompletion
