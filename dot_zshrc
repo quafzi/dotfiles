@@ -69,6 +69,8 @@ function mftbuild {
   ssh maxxfit /var/www/maxxfit/packages/bin/satis build /var/www/maxxfit/packages/satis.json /var/www/maxxfit/packages/web -vv --repository-url $remoteurl
 }
 
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag --hidden -a --ignore .git -l -g ""' # let fzf find hidden files
 export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'" # via <https://github.com/sharkdp/bat/issues/357>
