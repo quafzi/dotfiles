@@ -82,5 +82,10 @@ nnoremap <S-Down> :m+<CR>
 inoremap <S-Up> <Esc>:m-2<CR>
 inoremap <S-Down> <Esc>:m+<CR>
 
+" Insert Datetime (separated by comma)
+inoremap <F5> <C-R>=strftime("%F,%H:%M,")<CR>
+" Insert Time
+inoremap <F6> <C-R>=strftime('%H:%M')<CR><Esc>
+
 " Use T to open tig
 nmap T :!tig status<CR>
