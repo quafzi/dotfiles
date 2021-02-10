@@ -74,4 +74,5 @@
   smudge = git-lfs smudge -- %f
 
 [credential]
-  helper = cache --timeout=9999999999999999
+  # helper = cache --timeout=9999999999999999
+  helper = "!gopass-git-credentials $@"
