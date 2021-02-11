@@ -31,7 +31,7 @@ hi SignColumn ctermfg=NONE ctermbg=237 cterm=NONE guifg=NONE guibg=#3c3d37 gui=N
 hi Normal ctermfg=231 ctermbg=NONE cterm=NONE guifg=#f8f8f2 guibg=#272822 gui=NONE
 hi Boolean ctermfg=141 ctermbg=NONE cterm=NONE guifg=#ae81ff guibg=NONE gui=NONE
 hi Character ctermfg=141 ctermbg=NONE cterm=NONE guifg=#ae81ff guibg=NONE gui=NONE
-hi Comment ctermfg=196 ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=NONE
+hi Comment ctermfg=196 ctermbg=NONE cterm=italic guifg=#75715e guibg=NONE gui=NONE
 hi Conditional ctermfg=202 ctermbg=NONE cterm=NONE guifg=#f92672 guibg=NONE gui=NONE
 hi Constant ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
 hi Define ctermfg=202 ctermbg=NONE cterm=NONE guifg=#f92672 guibg=NONE gui=NONE
@@ -39,7 +39,7 @@ hi DiffAdd ctermfg=231 ctermbg=64 cterm=bold guifg=#f8f8f2 guibg=#46830c gui=bol
 hi DiffDelete ctermfg=88 ctermbg=NONE cterm=NONE guifg=#8b0807 guibg=NONE gui=NONE
 hi DiffChange ctermfg=NONE ctermbg=NONE cterm=NONE guifg=#f8f8f2 guibg=#243955 gui=NONE
 hi DiffText ctermfg=231 ctermbg=24 cterm=bold guifg=#f8f8f2 guibg=#204a87 gui=bold
-hi ErrorMsg ctermfg=231 ctermbg=202 cterm=NONE guifg=#f8f8f0 guibg=#f92672 gui=NONE
+hi ErrorMsg ctermfg=231 ctermbg=202 cterm=italic guifg=#f8f8f0 guibg=#f92672 gui=NONE
 hi WarningMsg ctermfg=231 ctermbg=202 cterm=NONE guifg=#f8f8f0 guibg=#f92672 gui=NONE
 hi Float ctermfg=141 ctermbg=NONE cterm=NONE guifg=#ae81ff guibg=NONE gui=NONE
 hi Function ctermfg=148 ctermbg=NONE cterm=NONE guifg=#a6e22e guibg=NONE gui=NONE
@@ -56,7 +56,7 @@ hi Statement ctermfg=202 ctermbg=NONE cterm=NONE guifg=#f92672 guibg=NONE gui=NO
 hi StorageClass ctermfg=81 ctermbg=NONE cterm=NONE guifg=#66d9ef guibg=NONE gui=italic
 hi String ctermfg=186 ctermbg=NONE cterm=NONE guifg=#e6db74 guibg=NONE gui=NONE
 hi Tag ctermfg=202 ctermbg=NONE cterm=NONE guifg=#f92672 guibg=NONE gui=NONE
-hi Title ctermfg=231 ctermbg=NONE cterm=bold guifg=#f8f8f2 guibg=NONE gui=bold
+hi Title ctermfg=231 ctermbg=NONE cterm=italic guifg=#f8f8f2 guibg=NONE gui=bold
 hi Todo ctermfg=95 ctermbg=NONE cterm=inverse,bold guifg=#75715e guibg=NONE gui=inverse,bold
 hi Type ctermfg=202 ctermbg=NONE cterm=NONE guifg=#f92672 guibg=NONE gui=NONE
 hi Underlined ctermfg=NONE ctermbg=NONE cterm=underline guifg=NONE guibg=NONE gui=underline
@@ -84,7 +84,7 @@ hi rubyRailsARMethod ctermfg=81 ctermbg=NONE cterm=NONE guifg=#66d9ef guibg=NONE
 hi rubyRailsRenderMethod ctermfg=81 ctermbg=NONE cterm=NONE guifg=#66d9ef guibg=NONE gui=NONE
 hi rubyRailsMethod ctermfg=81 ctermbg=NONE cterm=NONE guifg=#66d9ef guibg=NONE gui=NONE
 hi erubyDelimiter ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
-hi erubyComment ctermfg=95 ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=NONE
+hi erubyComment ctermfg=95 ctermbg=NONE cterm=italic guifg=#75715e guibg=NONE gui=NONE
 hi erubyRailsMethod ctermfg=81 ctermbg=NONE cterm=NONE guifg=#66d9ef guibg=NONE gui=NONE
 hi htmlTag ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
 hi htmlEndTag ctermfg=NONE ctermbg=NONE cterm=NONE guifg=#a6e22e guibg=NONE gui=NONE
