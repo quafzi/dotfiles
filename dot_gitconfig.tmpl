@@ -9,8 +9,7 @@
   excludesfile = ~/.config/git/gitignore_global
   filemode = false
   hooksPath = ~/.config/git/hooks
-  pager = diff-so-fancy
-  pager = less -R --chop-long-lines --no-init --quit-if-one-screen
+  pager = delta
   attributesfile = ~/.config/git/attributes
 
 [alias]
@@ -22,20 +21,16 @@
   smu = submodule update --init
   st = status
 
-[pager] # --no-pager (for opt out)
-  dd = true
-  dsf = true
-  icdiff = true
-  status = true
-  diff = diff-so-fancy | $(git config core.pager)
-  log  = diff-so-fancy | $(git config core.pager)
-  show = diff-so-fancy | $(git config core.pager)
-
-[diff] # use `git clean` for removing `*.orig* files after merge
-  tool = vimdiff
-
 [difftool]
   prompt = false
+
+[delta]
+  plus-style = "syntax #012800"
+  minus-style = "syntax #340001"
+  syntax-theme = Monokai Extended
+
+[interactive]
+  diffFilter = delta --color-only
 
 [color]
   diff = auto
@@ -56,13 +51,6 @@
 
 [fetch]
   recurseSubmodules = false
-
-[merge]
-  tool = vimdiff
-
-[diff-so-fancy]
-  stripLeadingSymbols = true
-  changeHunkIndicators = true
 
 [tag]
   sort = version:refname
