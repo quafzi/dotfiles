@@ -100,5 +100,8 @@ set diffopt+=indent-heuristic
 "Trigger emoji completion with ^X^U
 set completefunc=emoji#complete
 
+" Secure settings for gopass
+au BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
+
 "Notes
 :let g:notes_directories = ['~/owncloud/notes']
