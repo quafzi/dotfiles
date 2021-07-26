@@ -35,6 +35,9 @@ map <C-c> :Bdelete<CR>
 " Search tag with ,s
 nmap <Leader>s <Esc>:tag<space>
 
+" Grep using fzf silver searcher with ,F
+nmap <Leader>F <Esc>:FzAg<space>
+
 " Replace :emoji_name: into Emoji
 nmap <Leader>e <Esc>:%s/:\([^: \/<]\+\):/\=emoji#for(submatch(1), submatch(0))/g<CR>
 
