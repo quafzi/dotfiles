@@ -12,30 +12,30 @@ Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-php-manual'
 Plug 'bling/vim-airline'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'diepm/vim-rest-console'
+#Plug 'diepm/vim-rest-console'
 Plug 'digitaltoad/vim-jade'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'edkolev/tmuxline.vim'
+#Plug 'edkolev/tmuxline.vim'
 Plug 'francoiscabrol/ranger.vim'       " use ,f to browse file system
 Plug 'godlygeek/tabular'
 Plug 'GutenYe/json5.vim'               " syntax highlighting for json5
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug'] } " Markdown preview in browser, launch with :MarkdownPreview, stop with :MarkdownPreviewStop
+#Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug'] } " Markdown preview in browser, launch with :MarkdownPreview, stop with :MarkdownPreviewStop
 Plug 'isobit/vim-caddyfile'            " Caddyfile syntax support
 Plug 'jiangmiao/auto-pairs'
-Plug 'johngrib/vim-game-code-break'    " Play an Arkanoid clone with your code ☺
+#Plug 'johngrib/vim-game-code-break'    " Play an Arkanoid clone with your code ☺
 Plug 'joonty/vdebug'
 Plug 'junegunn/fzf.vim'                " fuzzy file finder
 Plug 'junegunn/vim-emoji'              " emoji support 😏
 Plug 'kien/ctrlp.vim'
-Plug 'kronos-io/kronos.vim'            " Kronos is a simple task and time manager for vim
+#Plug 'kronos-io/kronos.vim'            " Kronos is a simple task and time manager for vim
 Plug 'moll/vim-bbye'                   " close buffer without closing the split it lives in
-Plug 'evidens/vim-twig'
+#Plug 'evidens/vim-twig'
 Plug 'NickLaMuro/vimux'
 Plug 'plasticboy/vim-markdown'
 Plug 'pld-linux/vim-syntax-vcl'
 Plug 'posva/vim-vue'                   " syntax highlighting for Vue components
-Plug 'quafzi/vim-flow-diagram'         " preview for flow diagrams
-Plug 'quafzi/snipmate.vim'
+#Plug 'quafzi/vim-flow-diagram'         " preview for flow diagrams
+#Plug 'quafzi/snipmate.vim'
 Plug 'qpkorr/vim-renamer'              " bulk-rename files using vim (launch via :Renamer in the files folder)
 Plug 'rbgrouleff/bclose.vim'           " Autoclose ranger after use in neovim
 Plug 'rhysd/committia.vim'             " add status and diff view to commit buffers
@@ -43,16 +43,16 @@ Plug 'rhysd/git-messenger.vim'         " show git commit of current cursor posit
 Plug 'lifepillar/vim-mucomplete'       " nice autocompletion
 Plug 'Scuilion/markdown-drawer'        " Simplify navigation in large markdown files
 " Plug 'scrooloose/syntastic'
-Plug 'tobyS/pdv'
-Plug 'tobyS/vmustache'
+#Plug 'tobyS/pdv'
+#Plug 'tobyS/vmustache'
 Plug 'tpope/vim-abolish'               " :%Subvert/facilit{y,ies}/building{,s}/g
 Plug 'tpope/vim-fugitive'              " Git integration
 Plug 'tpope/vim-projectionist'
 Plug 'wavded/vim-stylus'               " stylus syntax highlighting
 Plug 'w0rp/ale'                        " On-the-fly syntax check
-Plug 'xavierchow/vim-sequence-diagram' " preview for sequence diagrams
-Plug 'xolox/vim-misc'                  " dependency of xolox/vim-notes
-Plug 'xolox/vim-notes'                 " easy notes
+#Plug 'xavierchow/vim-sequence-diagram' " preview for sequence diagrams
+#Plug 'xolox/vim-misc'                  " dependency of xolox/vim-notes
+#Plug 'xolox/vim-notes'                 " easy notes
 
 call plug#end()
 
