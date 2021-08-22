@@ -7,17 +7,21 @@
   XF86AudioLowerVolume
 
 # Mute
-"pactl set-sink-mute 0 toggle"
+"pactl set-sink-mute @DEFAULT_SINK@ toggle"
   XF86AudioMute
+
+# Mic Mute
+"pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+  XF86AudioMicMute
 
 # Calculator
 "gnome-calculator"
   XF86Calculator
 
 # Monitor Brightness Up
-"lux -a 500"
+"light -A 10"
   XF86MonBrightnessUp
 
-# Monitor Brightness Up
-"lux -s 500"
+# Monitor Brightness Down
+"light -U 10"
   XF86MonBrightnessDown
