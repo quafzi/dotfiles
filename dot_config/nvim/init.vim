@@ -17,6 +17,7 @@ Plug 'francoiscabrol/ranger.vim'       " use ,f to browse file system
 Plug 'godlygeek/tabular'
 Plug 'GutenYe/json5.vim'               " syntax highlighting for json5
 Plug 'isobit/vim-caddyfile'            " Caddyfile syntax support
+Plug 'jamessan/vim-gnupg'              " edit gpg encrypted text files
 Plug 'jiangmiao/auto-pairs'
 Plug 'joonty/vdebug'
 Plug 'junegunn/fzf.vim'                " fuzzy file finder
