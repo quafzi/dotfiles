@@ -15,6 +15,6 @@ endfunction
 
 " Builds tags file
 function! BuildTags()
-    let cmd = '!ctags -R --languages=php --totals=yes --tag-relative=yes --PHP-kinds=+cf-v .'
+    let cmd = '!ctags -R --totals=yes --tag-relative=yes .'
     execute cmd
 endfunction
