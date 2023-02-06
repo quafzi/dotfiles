@@ -285,3 +285,9 @@ exec --no-startup-id flameshot
 exec --no-startup-id nextcloud
 exec --no-startup-id pasystray # volume control widget
 exec --no-startup-id system-config-printer-applet
+
+# Dunst notification shortcuts
+bindsym $mod+ctrl+space exec "dunstctl close"
+bindsym $mod+ctrl+shift+space exec "dunstctl close-all"
+bindsym $mod+ctrl+period exec "dunstctl history-pop"
+bindsym $mod+ctrl+shift+period exec "dunstctl context"
