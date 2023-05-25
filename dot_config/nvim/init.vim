@@ -23,6 +23,7 @@ Plug 'joonty/vdebug'
 Plug 'junegunn/fzf.vim'                " fuzzy file finder
 Plug 'junegunn/vim-emoji'              " emoji support 😏
 Plug 'kien/ctrlp.vim'
+Plug 'lifepillar/vim-mucomplete'       " nice autocompletion
 Plug 'moll/vim-bbye'                   " close buffer without closing the split it lives in
 Plug 'NickLaMuro/vimux'
 Plug 'plasticboy/vim-markdown'
@@ -32,7 +33,7 @@ Plug 'qpkorr/vim-renamer'              " bulk-rename files using vim (launch via
 Plug 'rbgrouleff/bclose.vim'           " Autoclose ranger after use in neovim
 Plug 'rhysd/committia.vim'             " add status and diff view to commit buffers
 Plug 'rhysd/git-messenger.vim'         " show git commit of current cursor position with ,gm
-Plug 'lifepillar/vim-mucomplete'       " nice autocompletion
+Plug 'ruby-formatter/rufo-vim'         " Ruby format for vim via rufo
 Plug 'Scuilion/markdown-drawer'        " Simplify navigation in large markdown files
 Plug 'tpope/vim-abolish'               " :%Subvert/facilit{y,ies}/building{,s}/g
 Plug 'tpope/vim-fugitive'              " Git integration
