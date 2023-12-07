@@ -63,6 +63,9 @@ alias tea="sleep 300; play /usr/share/sounds/ubuntu/stereo/phone-incoming-call.o
 alias dc="docker-compose"
 alias glv="git tag | grep -E '^v?[0-9]' | sort -V | tail" # git latest versions
 
+# Hook direnv
+eval "$(direnv hook zsh)"
+
 # Use own folder for global NPM packages
 NPM_PACKAGES="${HOME}/.npm-packages"
 NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
