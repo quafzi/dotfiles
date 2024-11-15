@@ -26,6 +26,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'lifepillar/vim-mucomplete'       " nice autocompletion
 Plug 'moll/vim-bbye'                   " close buffer without closing the split it lives in
 Plug 'NickLaMuro/vimux'
+Plug 'nvim-lua/plenary.nvim'           " required for sindrets/diffview.nvim
 Plug 'plasticboy/vim-markdown'
 Plug 'pld-linux/vim-syntax-vcl'
 Plug 'posva/vim-vue'                   " syntax highlighting for Vue components
@@ -35,6 +36,7 @@ Plug 'rhysd/committia.vim'             " add status and diff view to commit buff
 Plug 'rhysd/git-messenger.vim'         " show git commit of current cursor position with ,gm
 Plug 'ruby-formatter/rufo-vim'         " Ruby format for vim via rufo
 Plug 'Scuilion/markdown-drawer'        " Simplify navigation in large markdown files
+Plug 'sindrets/diffview.nvim'          " Show Git diff
 Plug 'tpope/vim-abolish'               " :%Subvert/facilit{y,ies}/building{,s}/g
 Plug 'tpope/vim-fugitive'              " Git integration
 Plug 'tpope/vim-projectionist'

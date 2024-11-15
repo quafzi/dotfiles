@@ -90,5 +90,8 @@ inoremap <F5> <C-R>=strftime("%F,%H:%M,")<CR>
 " Insert Time
 inoremap <F6> <C-R>=strftime('%H:%M')<CR><Esc>
 
+nnoremap <Leader>dm :DiffviewOpen origin/main -- %<CR>
+nnoremap <Leader>dc :DiffviewClose<CR>
+
 " Use T to open tig
 nmap T :!tig status<CR>
