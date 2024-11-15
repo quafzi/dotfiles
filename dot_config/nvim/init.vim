@@ -34,6 +34,7 @@ Plug 'qpkorr/vim-renamer'              " bulk-rename files using vim (launch via
 Plug 'rbgrouleff/bclose.vim'           " Autoclose ranger after use in neovim
 Plug 'rhysd/committia.vim'             " add status and diff view to commit buffers
 Plug 'rhysd/git-messenger.vim'         " show git commit of current cursor position with ,gm
+Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' } " CSS colors
 Plug 'ruby-formatter/rufo-vim'         " Ruby format for vim via rufo
 Plug 'Scuilion/markdown-drawer'        " Simplify navigation in large markdown files
 Plug 'sindrets/diffview.nvim'          " Show Git diff
