@@ -38,6 +38,7 @@ Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' } " CSS colors
 Plug 'ruby-formatter/rufo-vim'         " Ruby format for vim via rufo
 Plug 'Scuilion/markdown-drawer'        " Simplify navigation in large markdown files
 Plug 'sindrets/diffview.nvim'          " Show Git diff
+Plug 'sotte/presenting.vim'            " Presenting talk slides
 Plug 'tpope/vim-abolish'               " :%Subvert/facilit{y,ies}/building{,s}/g
 Plug 'tpope/vim-fugitive'              " Git integration
 Plug 'tpope/vim-projectionist'
