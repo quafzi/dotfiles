@@ -85,13 +85,22 @@ nnoremap <S-Down> :m+<CR>
 inoremap <S-Up> <Esc>:m-2<CR>
 inoremap <S-Down> <Esc>:m+<CR>
 
-" Insert Datetime (separated by comma)
-inoremap <F5> <C-R>=strftime("%F,%H:%M,")<CR>
-" Insert Time
-inoremap <F6> <C-R>=strftime('%H:%M')<CR><Esc>
-
 nnoremap <Leader>dm :DiffviewOpen origin/main -- %<CR>
 nnoremap <Leader>dc :DiffviewClose<CR>
 
 " Use T to open tig
 nmap T :!tig status<CR>
+
+" nvim-dap
+nnoremap <F5> :lua require('dap').continue()<CR>
+nnoremap <F6> :lua require('dap').step_over()<CR>
+nnoremap <F11> :lua require('dap').step_into()<CR>
+nnoremap <F12> :lua require('dap').step_out()<CR>
+nnoremap <Leader>b :lua require('dap').toggle_breakpoint()<CR>
+nnoremap <Leader>B :lua require('dap').set_breakpoint()<CR>
+nnoremap <Leader>dr :lua require('dap').repl.open()<CR>
+nnoremap <Leader>dl :lua require('dap').repl.open()<CR>
+nnoremap <Leader>dh :lua require('dap.ui.widgets').hover()<CR>
+vnoremap <Leader>dh :lua require('dap.ui.widgets').hover()<CR>
+nnoremap <Leader>dp :lua require('dap.ui.widgets').preview()<CR>
+vnoremap <Leader>dp :lua require('dap.ui.widgets').preview()<CR>

@@ -19,7 +19,11 @@ Plug 'GutenYe/json5.vim'               " syntax highlighting for json5
 Plug 'isobit/vim-caddyfile'            " Caddyfile syntax support
 Plug 'jamessan/vim-gnupg'              " edit gpg encrypted text files
 Plug 'jiangmiao/auto-pairs'
-Plug 'joonty/vdebug'
+
+" Debugging
+Plug 'mfussenegger/nvim-dap'           " DAP (Debug Adapter Protocol) client
+Plug 'suketa/nvim-dap-ruby'
+
 Plug 'junegunn/fzf.vim'                " fuzzy file finder
 Plug 'junegunn/vim-emoji'              " emoji support 😏
 Plug 'kien/ctrlp.vim'
@@ -64,3 +68,6 @@ set exrc
 " This will prevent :autocmd, shell and write commands from being run inside
 " project-specific .vimrc files unless they’re owned by you.
 set secure
+
+" init DAP for Ruby
+lua require("dap-ruby").setup()
