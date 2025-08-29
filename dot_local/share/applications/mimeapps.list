@@ -1,3 +1,0 @@
-[Default Applications]
-x-scheme-handler/http=firefox-developer-edition.desktop;chromium.desktop;
-x-scheme-handler/https=firefox-developer-edition.desktop;chromium.desktop;

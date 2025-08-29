@@ -9,9 +9,9 @@ gpgconf --kill all 2>/dev/null || true &&
 git -C "${DOTFILES_DIR}" pull || git clone "${DOTFILES_REPO}" "${DOTFILES_DIR}" &&
 ln -sf ${DOTFILES_DIR}/bombadil.toml ~/.config/bombadil.toml &&
 cd ${DOTFILES_DIR} &&
+"${DOTFILES_DIR}/bin/packages-install" &&
 "${DOTFILES_DIR}/aider/install" &&
 "${DOTFILES_DIR}/aur/yay-install" &&
-"${DOTFILES_DIR}/bin/packages-install" &&
 "${DOTFILES_DIR}/docker/docker-group-setup" &&
 "${DOTFILES_DIR}/ruby/rvm-setup" &&
 "${DOTFILES_DIR}/vundle-install" &&

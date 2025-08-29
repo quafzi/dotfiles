@@ -34,4 +34,3 @@ xmodmap = { source = "xmodmap/xmodmap", target = ".Xmodmap" }
 vimrc = { source = "vim/vimrc", target = ".vimrc" }
 zshrc = { source = "zsh/zshrc", target = ".zshrc" }
 zsh_aliases = { source = "zsh/aliases", target = ".zsh/aliases" }
-zsh_functions = { source = "zsh/functions", target = ".zsh/functions" }
