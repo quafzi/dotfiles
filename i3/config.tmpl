@@ -217,7 +217,7 @@ bindsym $mod+x mode "$mode_system"
 
 set $monitors Displays (d) desktop, (b) beamer HDMI2, (a) auto
 mode "$monitors" {
-    bindsym d exec --no-startup-id {{ .i3.monitors.desk }}, mode "default"
+    bindsym d exec --no-startup-id {{ i3_monitors_desk }}, mode "default"
     bindsym b exec --no-startup-id xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x1080 --output HDMI2 --mode 1920x1080 --pos 0x0, mode "default"
     bindsym a exec --no-startup-id xrandr --auto, mode "default"
 
@@ -275,7 +275,7 @@ for_window [title="Taschenrechner"] floating enable
 exec --no-startup-id setxkbmap -layout de -variant nodeadkeys -option compose:caps
 
 # Init monitor layout
-exec --no-startup-id {{ .i3.monitors.desk }}, mode "default"
+exec --no-startup-id {{ i3_monitors_desk }}, mode "default"
 
 # Start some background services
 exec --no-startup-id gnome-keyring-daemon
