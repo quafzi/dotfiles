@@ -1,0 +1,1 @@
+function wspecff { watchexec -- RAILS_ENV=test bin/rspec --fail-fast $1 }

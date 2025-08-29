@@ -1,15 +1,14 @@
-These are my dotfiles, that are now handled by [chezmoi](https://github.com/twpayne/chezmoi).
+These are my dotfiles, that are now handled by [bombardil](https://github.com/oknozor/toml-bombadil).
 
 Installation
 ============
 
-    chezmoi init https://github.com/quafzi/dotfiles
+    git clone https://github.com/quafzi/dotfiles ~/.dotfiles && cd ~/.dotfiles
 
-You can then see what would be changed:
+Create symlinks
 
-    chezmoi diff
+    bombadil link
 
-If you're happy with the changes then apply them:
+Alternatively you can use hotreload while editing templates:
 
-    chezmoi apply
-
+    bombadil watch
