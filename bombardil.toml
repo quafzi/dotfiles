@@ -7,6 +7,7 @@ dotfiles_dir = "dotfiles"
 [settings]
 prehooks = [ "~/dotfiles/bin/prehooks" ]
 posthooks = [ "~/dotfiles/bin/posthooks" ]
+vars = ["~/.config/bombardil/variables.toml"]
 
 [settings.dots]
 abcde = { source = "abcde/abcde.conf", target = "~/.abcde.conf" }
