@@ -1,0 +1,54 @@
+#/bin/bash
+
+DOTFILES_REPO=${DOTFILES_REPO:-https://github.com/tim-heinsohn/dotfiles.git}
+DOTFILES_DIR=${DOTFILES_DIR:-~/dotfiles}
+
+sudo pacman -Suy --needed --noconfirm git &&
+# Restart gpg daemons to use updated versions after system update
+gpgconf --kill all 2>/dev/null || true &&
+git -C "${DOTFILES_DIR}" pull || git clone "${DOTFILES_REPO}" "${DOTFILES_DIR}" &&
+ln -sf ${DOTFILES_DIR}/bombadil.toml ~/.config/bombadil.toml &&
+cd ${DOTFILES_DIR} &&
+"${DOTFILES_DIR}/aider/install" &&
+"${DOTFILES_DIR}/aur/yay-install" &&
+"${DOTFILES_DIR}/bin/packages-install" &&
+"${DOTFILES_DIR}/docker/docker-group-setup" &&
+"${DOTFILES_DIR}/ruby/rvm-setup" &&
+"${DOTFILES_DIR}/vundle-install" &&
+bombadil link &&
+sheldeon lock &&
+
+yay -S --needed --noconfirm nvm
+[ -s "/usr/share/nvm/init-nvm.sh" ] && source /usr/share/nvm/init-nvm.sh
+nvm install 24.4.0
+nvm alias default 24.4.0
+
+# Install/update npm packages
+"${DOTFILES_DIR}/bin/npm-packages" auto &&
+
+# Install MCP servers
+"${DOTFILES_DIR}/bin/mcp-install" install gmail playwright &&
+
+# Setup Git service CLIs
+"${DOTFILES_DIR}/bin/git-cli-setup" &&
+
+# overcommit
+gem list overcommit -i >/dev/null 2>&1 || gem install overcommit &&
+
+# terraform-ls
+"${DOTFILES_DIR}/terraform-ls/install" &&
+
+# add user to wheel group to get sudo privileges granted, e. g. for journalctl
+# NOTE: requires "%wheel ALL=(ALL) ALL" in visudo
+sudo usermod -aG wheel $USER &&
+
+# add user to video group to allow adjusting brightness w/o sudo
+sudo usermod -aG video $USER &&
+
+# run acpi_listen after enabling this and press brightness keys on keyboard,
+# e.g. Fn+F5/F6
+sudo systemctl enable --now acpid &&
+sudo systemctl enable --now bluetooth &&
+sudo systemctl enable --now docker &&
+sudo systemctl enable --now qotd &&
+echo "Done."

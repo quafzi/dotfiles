@@ -1,0 +1,80 @@
+#!/bin/bash
+
+# Get the directory where this script is located
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+packages_file="${script_dir}/packages"
+
+# Track installation results
+failed_packages=()
+success_count=0
+
+# Collect all packages first
+all_packages=($(grep -E '^aur/|^core/|^extra/' "$packages_file" | cut -d' ' -f1))
+
+echo "Installing ${#all_packages[@]} packages..."
+
+# Update package databases once at the start
+echo "Updating package databases..."
+sudo pacman -Sy --noconfirm
+
+# Separate AUR and official packages for batch installation
+aur_packages=()
+official_packages=()
+
+for pkg in "${all_packages[@]}"; do
+    repo="${pkg%%/*}"
+    if [[ "$repo" == "aur" ]]; then
+        aur_packages+=("$pkg")
+    else
+        official_packages+=("$pkg")
+    fi
+done
+
+# Install official packages in batch
+if [[ ${#official_packages[@]} -gt 0 ]]; then
+    echo "Installing ${#official_packages[@]} official packages..."
+    if sudo pacman -S --needed --noconfirm "${official_packages[@]}"; then
+        success_count=$((success_count + ${#official_packages[@]}))
+        echo "✓ Official packages installed successfully"
+    else
+        echo "⚠ Some official packages failed to install"
+        # Try installing official packages individually to identify failures
+        for pkg in "${official_packages[@]}"; do
+            if sudo pacman -S --needed --noconfirm "$pkg" 2>/dev/null; then
+                success_count=$((success_count + 1))
+            else
+                failed_packages+=("$pkg")
+            fi
+        done
+    fi
+fi
+
+# Install AUR packages individually (they can't be batched as easily)
+if [[ ${#aur_packages[@]} -gt 0 ]]; then
+    echo "Installing ${#aur_packages[@]} AUR packages..."
+    for pkg in "${aur_packages[@]}"; do
+        echo "Installing $pkg..."
+        if yay -S --needed --noconfirm "$pkg" 2>/dev/null; then
+            success_count=$((success_count + 1))
+        else
+            failed_packages+=("$pkg")
+            echo "⚠ Failed to install $pkg"
+        fi
+    done
+fi
+
+# Report results
+echo
+echo "=== Installation Summary ==="
+echo "✓ Successfully installed: $success_count packages"
+if [[ ${#failed_packages[@]} -gt 0 ]]; then
+    echo "⚠ Failed to install: ${#failed_packages[@]} packages"
+    echo "Failed packages:"
+    printf "  - %s\n" "${failed_packages[@]}"
+    echo
+    echo "You can retry failed packages manually with:"
+    echo "  yay -S ${failed_packages[*]}"
+else
+    echo "🎉 All packages installed successfully!"
+fi
+echo "Done."
