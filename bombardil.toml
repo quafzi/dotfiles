@@ -1,0 +1,36 @@
+# toml-bombadil (configuration file)
+#
+# A Dotfile Manager written in Rust
+# <https://oknozor.github.io/toml-bombadil/>
+dotfiles_dir = "dotfiles"
+
+[settings]
+prehooks = [ "~/dotfiles/bin/prehooks" ]
+posthooks = [ "~/dotfiles/bin/posthooks" ]
+
+[settings.dots]
+abcde = { source = "abcde/abcde.conf", target = "~/.abcde.conf" }
+dunst = { source = "dunst/dunstrc", target = ".config/dunst/dunstrc" }
+flameshot =  { source = "flameshot/flameshot.ini", target = "~/.config/flameshot/flameshot.ini" }
+gitattributes = { source = "git/gitattributes", target = ".config/git/gitattributes" }
+gitconfig = { source = "git/config", target = ".gitconfig" }
+gitignore = { source = "git/ignore", target = ".config/git/gitignore_global" }
+githook_prepare_commit = { source = "git/hooks/prepare-commit-msg", target = ".config/git/hooks/prepare-commit-msg" }
+gpg_agent = { source = "gpg/gpg-agent", target = ".gnupg/gpg-agent.conf" }
+i3 = { source = "i3/config", target = ".config/i3/config" }
+i3_status = { source = "i3/i3status.conf", target = ".config/i3status/config" }
+kitty = { source = "kitty/kitty.conf", target = ".config/kitty/kitty.conf" }
+npmrc = { source = "npm/npmrc", target = ".npmrc" }
+nvim_init_lua = { source = "nvim/init.lua", target = ".config/nvim/init.lua" }
+nvim_functions = { source = "nvim/lua/functions.lua", target = ".config/nvim/lua/functions.lua" }
+nvim_keymaps = { source = "nvim/lua/keybindings.lua", target = ".config/nvim/lua/keybindings.lua" }
+nvim_plugins = { source = "nvim/lua/plugins.lua", target = ".config/nvim/lua/plugins.lua" }
+nvim_lsp_setup = { source = "nvim/lua/settings.lua", target = ".config/nvim/lua/settings.lua" }
+rofi = { source = "rofi/config", target = ".config/rofi/config.rasi" }
+rofi_pass = { source = "rofi/rofi-pass", target = ".config/rofi-pass/config" }
+xinitrc = { source = "xinit/xinitrc", target = ".xinitrc" }
+xmodmap = { source = "xmodmap/xmodmap", target = ".Xmodmap" }
+vimrc = { source = "vim/vimrc", target = ".vimrc" }
+zshrc = { source = "zsh/zshrc", target = ".zshrc" }
+zsh_aliases = { source = "zsh/aliases", target = ".zsh/aliases" }
+zsh_functions = { source = "zsh/functions", target = ".zsh/functions" }
