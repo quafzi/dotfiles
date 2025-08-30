@@ -11,6 +11,13 @@ return require("lazy").setup({
   "rhysd/committia.vim",                                  -- show diff while composing commit messages
   { "RRethy/vim-hexokinase", build = "make hexokinase" }, -- color preview
 
+  {
+    "tanvirtin/monokai.nvim",
+    config = function()
+      vim.cmd("colorscheme monokai")                      -- Colorscheme monokai
+      vim.cmd("highlight Comment guifg=red ctermfg=red")  -- … but with red comments
+    end,
+  },
   -- Are those still useful/required?
   --
   -- "lifepillar/vim-mucomplete"
